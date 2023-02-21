@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9709721216c160a4cb033d4a5b1ca197, type: 3}
-  m_Name: Blueberry
+  m_Name: Toad
   m_EditorClassIdentifier: 
-  name: Blueberry
-  sprite: {fileID: 21300000, guid: 49933970c695dfe45a9e50e85befb2af, type: 3}
+  name: Toad
+  sprite: {fileID: 21300000, guid: 89193e280de18fa4db36ed0bdc2f8ea8, type: 3}
   ingredientPrice: 0
