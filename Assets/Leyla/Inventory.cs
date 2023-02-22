@@ -7,6 +7,12 @@ public class Inventory : MonoBehaviour
 {
     public GameObject[] ingredients;
     public GameObject selectedIngredient;
+    public GameObject ingredientSpawnPoint;
+    
+    [Header("Temp ingredient storages")]
+    public GameObject blueberry;
+    public GameObject frog;
+    public GameObject toad;
 
 
     //This function is checking if there's enough of the ingredient. If there is, remove from amount - (which is child of label - (which is child of ingredient))
@@ -29,6 +35,7 @@ public class Inventory : MonoBehaviour
             print("taking 1 " + ingredientName);
             number -= 1;
             amount.GetComponent<TextMeshProUGUI>().text = number.ToString();
+
         }
         else if (number == 0)
         {
