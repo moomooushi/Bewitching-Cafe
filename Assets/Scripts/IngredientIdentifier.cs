@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class IngredientIdentifier : MonoBehaviour
 {
+    public GameObject prefabOne;
+    public GameObject prefabTwo;
+
+    private void Update()
+    {
+        
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

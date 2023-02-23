@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+//using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
     public GameObject[] ingredients;
     public GameObject selectedIngredient;
     public GameObject ingredientSpawnPoint;
+    SpriteRenderer sr;
     
-    [Header("Temp ingredient storages")]
-    public GameObject blueberry;
-    public GameObject frog;
-    public GameObject toad;
+    [Header("Ingredient Storage")]
+    public GameObject[] ingredientPrefabs;
 
 
     //This function is checking if there's enough of the ingredient. If there is, remove from amount - (which is child of label - (which is child of ingredient))
@@ -36,10 +37,19 @@ public class Inventory : MonoBehaviour
             number -= 1;
             amount.GetComponent<TextMeshProUGUI>().text = number.ToString();
 
+            foreach (GameObject prefab in ingredientPrefabs)
+            {
+                if (selectedIngredient.name == prefab.name)
+                {
+                    Instantiate(prefab, ingredientSpawnPoint.transform.position, transform.rotation);
+                }
+            }
+
         }
-        else if (number == 0)
+        if (number == 0)
         {
             print("youre out of " + ingredientName);
+            selectedIngredient.GetComponent<Image>().enabled = false;
         }
     }
 }
