@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6494417089768680159}
   - component: {fileID: 7045221334454363679}
   - component: {fileID: 2320483837910462602}
+  - component: {fileID: -2822737349732011578}
   m_Layer: 0
   m_Name: OrangeCrystal
   m_TagString: Untagged
@@ -147,3 +148,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Data>k__BackingField: {fileID: 11400000, guid: 8b57778279478bc42897f7d767c020b7, type: 2}
+--- !u!114 &-2822737349732011578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3210495018452311271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b11f411d965f9894095c4e9bf533e328, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lovePotion: {fileID: 9103136447890160117, guid: 0298ea82de5cda94a9d5bebaac105c82, type: 3}

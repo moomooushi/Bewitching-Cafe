@@ -160,4 +160,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0e758835e1e4014fb446dcc31141a6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healingPotion: {fileID: 4980750660696195349, guid: e5605d68beb13eb44bddfdc072961b13, type: 3}
+  healingPotion: {fileID: 9103136447890160117, guid: 55c2d6f9ab9d9cf40873d63b5a68009f, type: 3}
