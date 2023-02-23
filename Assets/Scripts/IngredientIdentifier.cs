@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IngredientIdentifier : MonoBehaviour
 {
-    [SerializeField] PotionData recipe;
+    [SerializeField] List<PotionData> recipes;
     [SerializeField] List<Ingredient> containedIngredients;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -14,13 +14,7 @@ public class IngredientIdentifier : MonoBehaviour
         {
             if (containedIngredients.Find(i => i == ingredient)) return;
             containedIngredients.Add(ingredient);
-        }
-        //if (collision.gameObject.CompareTag("Frog") && collision.gameObject.CompareTag("Toad")) 
-        //{
-        //    Debug.Log("both exist in the cauldron");
-        //    //Destroy(GameObject.FindWithTag("Frog"));
-        //    //Destroy(GameObject.FindWithTag("Toad"));
-        //}       
+        } 
     }
 
     private void OnTriggerExit2D(Collider2D collision)
