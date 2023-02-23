@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Frog
   - Toad
+  - Blueberry
+  - Skull
   layers:
   - Default
   - TransparentFX

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6215227628832231631}
   - component: {fileID: 2497438146401631121}
   - component: {fileID: 5598670005075387045}
+  - component: {fileID: 5003385238173691728}
   m_Layer: 0
   m_Name: Blueberry
   m_TagString: Untagged
@@ -147,3 +148,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Data>k__BackingField: {fileID: 11400000, guid: a0e12ea5e1e1d3041a76dc49c2b8e44d, type: 2}
+--- !u!114 &5003385238173691728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2293857493260216522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0e758835e1e4014fb446dcc31141a6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healingPotion: {fileID: 4980750660696195349, guid: e5605d68beb13eb44bddfdc072961b13, type: 3}

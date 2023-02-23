@@ -247,7 +247,7 @@ GameObject:
   - component: {fileID: 16750118}
   - component: {fileID: 16750117}
   m_Layer: 5
-  m_Name: Spawn Frog
+  m_Name: Spawn Skull
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -426,7 +426,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 89193e280de18fa4db36ed0bdc2f8ea8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5c8a65b01b48669418d26e0651b6487e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1097,6 +1097,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb9eeb5bde4e0384faa7b8025c43b3b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  recipes: []
+  containedIngredients: []
 --- !u!61 &1422183871
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1278,8 +1280,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a250015850b358949bcc94623820b1f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frogIngredient: {fileID: 2529271619297098390, guid: 9740a6714e9d3bb46b405f0c7037f1a3, type: 3}
-  toadIngredient: {fileID: 4171471944575214034, guid: e2fd4ece17bc75f4da7d35e18d14cc90, type: 3}
+  frogIngredient: {fileID: 4684546896088887974, guid: 01e1eb5188e4e7f4d9b2104509ae86aa, type: 3}
+  toadIngredient: {fileID: 4980750660696195349, guid: e5605d68beb13eb44bddfdc072961b13, type: 3}
   ingredientSpawnPoint: {fileID: 630832942}
 --- !u!4 &1765094949
 Transform:
@@ -1410,7 +1412,7 @@ GameObject:
   - component: {fileID: 2045932378}
   - component: {fileID: 2045932377}
   m_Layer: 5
-  m_Name: Frog Image
+  m_Name: Skull Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1456,7 +1458,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f65bad32224646b4ab640770d9b74db6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c00894f290bbcbc4da2064b0c77d19cf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

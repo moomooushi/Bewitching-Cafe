@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c79861e9368a80b48a667cac2f905e89, type: 3}
   m_Name: Invisibility Potion
   m_EditorClassIdentifier: 
-  recipe: []
+  potionName: Invisibility Potion
+  sprite: {fileID: 0}
+  recipe:
+  - {fileID: 11400000, guid: fb78d7cd0a306ff43b6c5f5d28f865c4, type: 2}
+  - {fileID: 11400000, guid: ea1e26911c995be4f8519645bd449530, type: 2}
