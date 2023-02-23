@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Toad
   m_EditorClassIdentifier: 
   name: Toad
-  sprite: {fileID: 21300000, guid: 89193e280de18fa4db36ed0bdc2f8ea8, type: 3}
+  sprite: {fileID: 21300000, guid: 5c8a65b01b48669418d26e0651b6487e, type: 3}
   ingredientPrice: 0
