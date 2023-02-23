@@ -253,7 +253,7 @@ RectTransform:
   m_GameObject: {fileID: 921164763}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.50509, y: 0.50509, z: 0.50509}
+  m_LocalScale: {x: 0.35711995, y: 0.2506105, z: 0.2506105}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 526305201}
@@ -261,7 +261,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 60}
+  m_AnchoredPosition: {x: 0, y: 104.1}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &921164765
@@ -287,8 +287,8 @@ MonoBehaviour:
   m_text: "Look at your mail and help CAT create potions based on what the customer
     asks. \nThis showcases what happens during the night cycle of the game."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e4277bccf042b844ebe8d61ee0d7da72, type: 2}
-  m_sharedMaterial: {fileID: -1058475468472694364, guid: e4277bccf042b844ebe8d61ee0d7da72, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 31b65c67bc9098e44aef2ba5772a16b6, type: 2}
+  m_sharedMaterial: {fileID: 7122195001448037830, guid: 31b65c67bc9098e44aef2ba5772a16b6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
