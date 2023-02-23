@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2655268488455121575}
   - component: {fileID: -5735161283141322426}
   - component: {fileID: 319846965064131966}
+  - component: {fileID: -8178283031903919607}
   m_Layer: 0
   m_Name: Blueberry
   m_TagString: Blueberry
@@ -133,3 +134,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-8178283031903919607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4171471944575214034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36306b84a9ab80749b78693af2add482, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Data>k__BackingField: {fileID: 0}
