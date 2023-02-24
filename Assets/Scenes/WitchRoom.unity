@@ -2546,6 +2546,7 @@ GameObject:
   - component: {fileID: 626573911}
   - component: {fileID: 626573910}
   - component: {fileID: 626573913}
+  - component: {fileID: 626573914}
   m_Layer: 5
   m_Name: CatButton
   m_TagString: Untagged
@@ -2692,6 +2693,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Image: {fileID: 584464826}
+--- !u!114 &626573914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 626573908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51d4db3fa875e7a41bb764a74553f83d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  theButton: {fileID: 626573911}
 --- !u!1 &627026466
 GameObject:
   m_ObjectHideFlags: 0
