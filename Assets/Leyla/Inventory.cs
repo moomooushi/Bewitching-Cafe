@@ -27,7 +27,7 @@ public class Inventory : MonoBehaviour
             }
         }
         
-        GameObject label = selectedIngredient.transform.GetChild(1).gameObject;
+        GameObject label = selectedIngredient.transform.GetChild(0).gameObject;
         GameObject amount = label.transform.GetChild(0).gameObject;
         int.TryParse(amount.GetComponent<TextMeshProUGUI>().text, out int number);
         
