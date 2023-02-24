@@ -10,7 +10,7 @@ public class HealingPotion : MonoBehaviour
     {
         if (collision.gameObject.tag == "Skull")
         {
-            Instantiate(healingPotion, new Vector3(-2.19f, 2.9f, 0.0056f), transform.rotation);
+            Instantiate(healingPotion, new Vector3(-2.19f, 2.9f, 0.0056f), Quaternion.identity);
             Destroy(gameObject);
             Destroy(collision.gameObject);
         }
