@@ -9,7 +9,7 @@ public class LovePotion : MonoBehaviour
     {
         if (collision.gameObject.tag == "PinkCrystal")
         {
-            Instantiate(lovePotion, new Vector3(-4.19f, 2.9f, 0.0056f), transform.rotation);
+            Instantiate(lovePotion, new Vector3(-4.19f, 2.9f, 0.0056f), Quaternion.identity);
             Destroy(gameObject);
             Destroy(collision.gameObject);
         }

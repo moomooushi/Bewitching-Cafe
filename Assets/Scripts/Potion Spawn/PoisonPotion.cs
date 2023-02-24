@@ -11,7 +11,7 @@ public class PoisonPotion : MonoBehaviour
     {
         if (collision.gameObject.tag == "Skull")
         {
-            Instantiate(poisonPotion, new Vector3(-1.19f, 2.9f, 0.0056f), transform.rotation);
+            Instantiate(poisonPotion, new Vector3(-1.19f, 2.9f, 0.0056f), Quaternion.identity);
             Destroy(gameObject);
             Destroy(collision.gameObject);
         }
