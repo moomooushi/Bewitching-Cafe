@@ -543,7 +543,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 91.6}
+  m_AnchoredPosition: {x: 0, y: 98}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &88934948
@@ -566,11 +566,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Hey there Cat!\nI'm hoping to get 3 \npotions from you.\n1 x Healing Potion\n1
-    x Poison Potion\n1 x Love Potion\nThanks so much,\nCow\n"
+  m_text: "Hey there Cat!\n\nI'm hoping to get 3 \npotions from you.\n1 x Healing
+    Potion\n1 x Poison Potion\n1 x Love Potion\n\nThanks so much,\nCow\n"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 31b65c67bc9098e44aef2ba5772a16b6, type: 2}
-  m_sharedMaterial: {fileID: 7122195001448037830, guid: 31b65c67bc9098e44aef2ba5772a16b6, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 351cb0d32852f2b46b02513c9c38fc01, type: 2}
+  m_sharedMaterial: {fileID: -1493471441098772564, guid: 351cb0d32852f2b46b02513c9c38fc01, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -594,8 +594,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -606,7 +606,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 15
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -1213,8 +1213,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Healing Potion
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e4277bccf042b844ebe8d61ee0d7da72, type: 2}
-  m_sharedMaterial: {fileID: -1058475468472694364, guid: e4277bccf042b844ebe8d61ee0d7da72, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2020eb8f84a4ced43b123b25ddceb4a4, type: 2}
+  m_sharedMaterial: {fileID: 332378419147493673, guid: 2020eb8f84a4ced43b123b25ddceb4a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1503,13 +1503,12 @@ MonoBehaviour:
 
     Need:
 
-    1 x Orange Crystal
+    One Carnelian
 
-    1 x Pink
-    Crystal'
+    One rose quartz'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e4277bccf042b844ebe8d61ee0d7da72, type: 2}
-  m_sharedMaterial: {fileID: -1058475468472694364, guid: e4277bccf042b844ebe8d61ee0d7da72, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2020eb8f84a4ced43b123b25ddceb4a4, type: 2}
+  m_sharedMaterial: {fileID: 332378419147493673, guid: 2020eb8f84a4ced43b123b25ddceb4a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2903,8 +2902,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Love Potion
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e4277bccf042b844ebe8d61ee0d7da72, type: 2}
-  m_sharedMaterial: {fileID: -1058475468472694364, guid: e4277bccf042b844ebe8d61ee0d7da72, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2020eb8f84a4ced43b123b25ddceb4a4, type: 2}
+  m_sharedMaterial: {fileID: 332378419147493673, guid: 2020eb8f84a4ced43b123b25ddceb4a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3962,8 +3961,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Poison Potion
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e4277bccf042b844ebe8d61ee0d7da72, type: 2}
-  m_sharedMaterial: {fileID: -1058475468472694364, guid: e4277bccf042b844ebe8d61ee0d7da72, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2020eb8f84a4ced43b123b25ddceb4a4, type: 2}
+  m_sharedMaterial: {fileID: 332378419147493673, guid: 2020eb8f84a4ced43b123b25ddceb4a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5081,12 +5080,12 @@ MonoBehaviour:
 
     Need:
 
-    1 x Toad
+    One Toad
 
-    1 x Skull'
+    One Skull'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e4277bccf042b844ebe8d61ee0d7da72, type: 2}
-  m_sharedMaterial: {fileID: -1058475468472694364, guid: e4277bccf042b844ebe8d61ee0d7da72, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2020eb8f84a4ced43b123b25ddceb4a4, type: 2}
+  m_sharedMaterial: {fileID: 332378419147493673, guid: 2020eb8f84a4ced43b123b25ddceb4a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6511,7 +6510,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: OrangeCrystal
+  m_text: Carnelian
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -6804,12 +6803,12 @@ MonoBehaviour:
 
     Need:
 
-    1 x Blueberry
+    One Blueberry
 
-    1 x Skull'
+    One Skull'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e4277bccf042b844ebe8d61ee0d7da72, type: 2}
-  m_sharedMaterial: {fileID: -1058475468472694364, guid: e4277bccf042b844ebe8d61ee0d7da72, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2020eb8f84a4ced43b123b25ddceb4a4, type: 2}
+  m_sharedMaterial: {fileID: 332378419147493673, guid: 2020eb8f84a4ced43b123b25ddceb4a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7267,7 +7266,7 @@ GameObject:
   - component: {fileID: 1271385174}
   - component: {fileID: 1271385173}
   m_Layer: 5
-  m_Name: PinkCrystal
+  m_Name: Rose Quartz
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7326,7 +7325,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: PinkCrystal
+          m_StringArgument: Rose Quartz
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1271385174
@@ -9191,7 +9190,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PinkCrystal
+  m_text: Rose Quartz
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9907,7 +9906,7 @@ GameObject:
   - component: {fileID: 1870571598}
   - component: {fileID: 1870571597}
   m_Layer: 5
-  m_Name: OrangeCrystal
+  m_Name: Carnelian
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9966,7 +9965,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: OrangeCrystal
+          m_StringArgument: Carnelian
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1870571598
