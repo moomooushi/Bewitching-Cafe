@@ -67,10 +67,10 @@ namespace Ingredients
                 spriteRenderer.sprite = data.sprite;
         }
 
-        public override IEnumerator DelayedDestroy()
+        public override IEnumerator DoDelayedDestroy()
         {
             yield return new WaitForSeconds(0.5f);
-            var particle = Instantiate((particleOnDestroy, this.transform.position, Quaternion.identity));
+            var particle = Instantiate(particleOnDestroy, this.transform.position, Quaternion.identity);
             Debug.Log("Particle instantiated");
             this.transform.DOScale(Vector3.zero, animationFadeOutTime);
             spriteRenderer.DOFade(0, animationFadeOutTime);
@@ -79,7 +79,7 @@ namespace Ingredients
 
         public override void DoDestroy()
         {
-            StartCoroutine(DelayedDestroy());
+            StartCoroutine(DoDelayedDestroy());
         }
 
         private void OnDestroy()
