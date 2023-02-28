@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameEvents : MonoBehaviour
+namespace Events
 {
-    // Start is called before the first frame update
-    void Start()
+    public class GameEvents : MonoBehaviour
     {
-        
-    }
+        // Cauldron events
+        public delegate void DestroyCauldronItems();
 
-    // Update is called once per frame
-    void Update()
-    {
+        public static DestroyCauldronItems OnDestroyCauldronItemsEvent;
         
+        // Other events
+        public delegate void WhenIngredientDestroyed();
+
+        public static WhenIngredientDestroyed OnIngredientDestroyedEvent;
     }
 }

@@ -1,11 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Ingredients;
 using UnityEngine;
 
 public class IngredientIdentifier : MonoBehaviour
 {
     [SerializeField] List<PotionData> recipes;
     [SerializeField] List<Ingredient> containedIngredients;
+
+    // private void OnEnable()
+    // {
+    //     GameEvents.OnDestroyCauldronItemsEvent += DestroyItemsInCauldron;
+    // }    
+    //
+    // private void OnDisable()
+    // {
+    //     GameEvents.OnDestroyCauldronItemsEvent -= DestroyItemsInCauldron;
+    // }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

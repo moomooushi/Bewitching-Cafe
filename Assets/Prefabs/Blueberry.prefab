@@ -121,7 +121,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36306b84a9ab80749b78693af2add482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Data>k__BackingField: {fileID: 11400000, guid: a0e12ea5e1e1d3041a76dc49c2b8e44d, type: 2}
+  ingredientData: {fileID: 11400000, guid: a0e12ea5e1e1d3041a76dc49c2b8e44d, type: 2}
+  spriteRenderer: {fileID: 3263182408695265415}
+  polyCollider: {fileID: 0}
 --- !u!114 &5003385238173691728
 MonoBehaviour:
   m_ObjectHideFlags: 0

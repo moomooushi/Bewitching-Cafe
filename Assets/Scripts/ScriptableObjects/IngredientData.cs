@@ -1,9 +1,14 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Ingredients", menuName = "Ingredients/New Ingredient")]
-public class IngredientData : ScriptableObject
+namespace ScriptableObjects.Ingredients
 {
-    public new string name;
-    public Sprite sprite;
-    public float ingredientPrice;
+    
+    [CreateAssetMenu(fileName = "Ingredients", menuName = "Ingredients/New Ingredient")]
+    public class IngredientData : ScriptableObject
+    {
+        public new string name;
+        public Sprite sprite;
+        public float ingredientPrice;
+    }
+
 }
