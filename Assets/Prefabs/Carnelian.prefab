@@ -121,6 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36306b84a9ab80749b78693af2add482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleOnDestroy: {fileID: 9157105887711914197, guid: c4f829cb7dd4b864caf8832ec5b1ee55, type: 3}
+  animationFadeOutTime: 1
   ingredientData: {fileID: 11400000, guid: 8b57778279478bc42897f7d767c020b7, type: 2}
   spriteRenderer: {fileID: 8180609915038749292}
   polyCollider: {fileID: 0}
