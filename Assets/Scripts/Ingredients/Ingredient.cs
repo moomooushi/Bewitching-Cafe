@@ -7,10 +7,12 @@ using UnityEngine;
 using ScriptableObjects.Ingredients;
 using DG.Tweening;
 using Events;
+using Interfaces;
+using Object = UnityEngine.Object;
 
 namespace Ingredients
 {
-    public class Ingredient : Destroyable
+    public class Ingredient : MonoBehaviour, IDestroyable
     {
         // Start is called before the first frame update
         // [field: SerializeField] public IngredientData Data { get; private set; }
@@ -20,6 +22,8 @@ namespace Ingredients
         public SpriteRenderer spriteRenderer;
 
         public PolygonCollider2D polyCollider;
+        [SerializeField] private GameObject particleOnDestroy;
+        [field:SerializeField] float animationFadeOutTime { get; set; }
 
         public IngredientData IngredientData
         {
@@ -47,7 +51,7 @@ namespace Ingredients
         {
             polyCollider = GetComponent<PolygonCollider2D>();
 
-            if (polyCollider = null)
+            if (polyCollider = null) // If there is no poly collider, attach it onto the prefab
             {
                 _ = gameObject.AddComponent(typeof(PolygonCollider2D)) as PolygonCollider2D;
                 Debug.Log("Added polygon collider");
@@ -56,33 +60,36 @@ namespace Ingredients
 
         private void UpdateSpriteRenderer(IngredientData data)
         {
-            if (GetComponent<SpriteRenderer>())
+            if (GetComponent<SpriteRenderer>()) 
                 spriteRenderer = GetComponent<SpriteRenderer>();
-            else
+            else // if not spriterenderer add one
             {
                 spriteRenderer = gameObject.AddComponent(typeof(SpriteRenderer)) as SpriteRenderer;
             }
 
-            if (spriteRenderer != null)
+            if (spriteRenderer != null) // If no sprite, add a sprite from the ingredient data
                 spriteRenderer.sprite = data.sprite;
         }
 
-        public override IEnumerator DoDelayedDestroy()
+        public IEnumerator DoDelayedDestroy() // overrides the enumerator in IDestroyable so this plays
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.5f); // nothing for .5s
+            // Instantiate a particle on the same position as the prefab
             var particle = Instantiate(particleOnDestroy, this.transform.position, Quaternion.identity);
             Debug.Log("Particle instantiated");
-            this.transform.DOScale(Vector3.zero, animationFadeOutTime);
-            spriteRenderer.DOFade(0, animationFadeOutTime);
-            Destroy(particle, 2f);
+            this.transform.DOScale(Vector3.zero, animationFadeOutTime); // Vector3 for where particle will spawn
+            spriteRenderer.DOFade(0, animationFadeOutTime); // fade after sometime
+            Destroy(particle, 2f); // destroy the particle after 2s
         }
 
-        public override void DoDestroy()
+
+
+        public void DoDestroy() // Overrides the function in IDestroyable so this plays
         {
             StartCoroutine(DoDelayedDestroy());
         }
 
-        private void OnDestroy()
+        private void OnDestroy() // Calls the IngredientDestroyEvent 
         {
             GameEvents.OnIngredientDestroyedEvent?.Invoke();
         }
