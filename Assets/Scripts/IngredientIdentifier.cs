@@ -1,10 +1,13 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Ingredients;
 using UnityEngine;
-using abstracts;
+using Abstracts;
 using Events;
+using Interfaces;
+using ScriptableObjects;
 
 public class IngredientIdentifier : Receptacle
 {
@@ -21,13 +24,15 @@ public class IngredientIdentifier : Receptacle
         GameEvents.OnDestroyCauldronItemsEvent -= DestroyItemsInCauldron;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private new void OnTriggerEnter2D(Collider2D collision)
     {
         // You might wanna check if the ingredient instance is already in the list, and return out if it is
         if(collision.TryGetComponent<Ingredient>(out Ingredient ingredient))
         {
             if (containedIngredients.Find(i => i == ingredient)) return;
             containedIngredients.Add(ingredient);
+            // invoke event, and send contained ingredients to potion manager. event thats expecting a list of ingredients.
+            
         } 
     }
 
@@ -41,10 +46,12 @@ public class IngredientIdentifier : Receptacle
 
     void DestroyItemsInCauldron()
     {
-        var children = this.GetComponentInChildren<Transform>();
+        List<Transform> children = this.GetComponentsInChildren<Transform>().ToList(); // gets all transforms in cauldron and converts it to lists
         foreach (var i in children)
         {
-
+            var isDestroyable = i.gameObject.TryGetComponent(out IDestroyable destroyable);
+            if (isDestroyable)
+                destroyable.DoDestroy();
         }
     }
 }

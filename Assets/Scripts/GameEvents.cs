@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Ingredients;
 using UnityEngine;
 
 namespace Events
@@ -15,5 +16,12 @@ namespace Events
         public delegate void WhenIngredientDestroyed();
 
         public static WhenIngredientDestroyed OnIngredientDestroyedEvent;
+        
+        // send ingredients to potion manager
+
+        public delegate void UpdateList(List<Ingredient> list);
+        
+        public static UpdateList onSendListEvent;
+        // in manager subscribe to onSendListEvent. 
     }
 }

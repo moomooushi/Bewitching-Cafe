@@ -5,11 +5,11 @@ using UnityEngine;
 using ScriptableObjects;
 using Ingredients;
 
-namespace abstracts
+namespace Abstracts
 {
     public class Receptacle : MonoBehaviour
     {
-        protected void OnTriggerEnter2D(Collider2D col)
+        protected void OnTriggerEnter2D(Collider2D col) 
         {
             if (col.GetComponent<Ingredient>())
             {
