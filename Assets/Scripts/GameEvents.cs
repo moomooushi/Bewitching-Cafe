@@ -17,11 +17,12 @@ namespace Events
 
         public static WhenIngredientDestroyed OnIngredientDestroyedEvent;
         
-        // send ingredients to potion manager
+        // Ingredients stuff
+        public delegate void IngredientAdded(Ingredient ingredient);
 
-        public delegate void UpdateList(List<Ingredient> list);
+        public delegate void IngredientRemoved(Ingredient ingredient);
         
-        public static UpdateList onSendListEvent;
-        // in manager subscribe to onSendListEvent. 
+        public static IngredientAdded OnIngredientEnterCauldron;
+        public static IngredientRemoved OnIngredientExitCauldron;
     }
 }

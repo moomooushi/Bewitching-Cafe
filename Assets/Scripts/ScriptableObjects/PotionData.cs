@@ -10,5 +10,7 @@ namespace ScriptableObjects
         [SerializeField] private string potionName;
         [SerializeField] Sprite sprite;
         [SerializeField] List<IngredientData> recipe; // HashSet makes every item different.
+
+        public List<IngredientData> Recipe => recipe;
     }
 }
