@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Collections;
-using UnityEditor.U2D.Path;
 using UnityEngine;
 using ScriptableObjects.Ingredients;
 using DG.Tweening;
