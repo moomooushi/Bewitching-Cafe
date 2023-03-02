@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 5212056333092196328}
   - component: {fileID: 5703666286078769354}
   - component: {fileID: 845429872438519464}
-  - component: {fileID: -1337306360256205181}
   - component: {fileID: 6149420812004124016}
   m_Layer: 0
   m_Name: Toad
@@ -121,24 +120,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36306b84a9ab80749b78693af2add482, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleOnDestroy: {fileID: 9157105887711914197, guid: c4f829cb7dd4b864caf8832ec5b1ee55, type: 3}
-  animationFadeOutTime: 1
   ingredientData: {fileID: 11400000, guid: ea1e26911c995be4f8519645bd449530, type: 2}
   spriteRenderer: {fileID: 5212056333092196328}
   polyCollider: {fileID: 0}
---- !u!114 &-1337306360256205181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4980750660696195349}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c89c75de86eb0d640b3a0e74aebbdda0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  poisonPotion: {fileID: 9103136447890160117, guid: c6b3494564a09844a81e418bbf05c6ab, type: 3}
+  particleOnDestroy: {fileID: 9157105887711914197, guid: c4f829cb7dd4b864caf8832ec5b1ee55, type: 3}
+  <animationFadeOutTime>k__BackingField: 0.25
 --- !u!60 &6149420812004124016
 PolygonCollider2D:
   m_ObjectHideFlags: 0

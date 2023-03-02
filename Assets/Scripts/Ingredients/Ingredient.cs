@@ -41,6 +41,14 @@ namespace Ingredients
             UpdateValues();
         }
 
+        private void Update() 
+        {
+            if (gameObject.transform.position.y < -3) 
+            {
+                Destroy(gameObject);
+            }
+        }
+
         void UpdateValues()
         {
             UpdateColliders();
