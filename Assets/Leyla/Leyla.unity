@@ -396,6 +396,8 @@ MonoBehaviour:
   - Skittles the Squirrel
   letterText: {fileID: 88934946}
   potion: 
+  amount: 0
+  amountCount: 0
   potionCustomer: 
   maxPotions: 0
   maxCustomers: 0
@@ -5748,7 +5750,7 @@ GameObject:
   - component: {fileID: 1271385174}
   - component: {fileID: 1271385173}
   m_Layer: 5
-  m_Name: PinkCrystal
+  m_Name: Rose Quartz
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5807,7 +5809,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: PinkCrystal
+          m_StringArgument: Rose Quartz
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1271385174
@@ -7857,7 +7859,7 @@ GameObject:
   - component: {fileID: 1870571598}
   - component: {fileID: 1870571597}
   m_Layer: 5
-  m_Name: OrangeCrystal
+  m_Name: Carnelian
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7916,7 +7918,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: OrangeCrystal
+          m_StringArgument: Carnelian
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1870571598
