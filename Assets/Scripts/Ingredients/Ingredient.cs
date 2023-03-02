@@ -34,6 +34,8 @@ namespace Ingredients
         private void Awake()
         {
             UpdateValues();
+            // THIS DESTROY IS VERY TEMPORARY. REMOVE FOR NEXT TEST
+            Destroy(this.gameObject, 7f);
         }
 
         private void OnValidate()

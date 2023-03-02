@@ -17,4 +17,6 @@ MonoBehaviour:
   recipe:
   - {fileID: 11400000, guid: 8b57778279478bc42897f7d767c020b7, type: 2}
   - {fileID: 11400000, guid: 1befbf4357a537e488058c3817db5b68, type: 2}
+  howManyPotionsExist: 0
   potionPrefab: {fileID: 9103136447890160117, guid: 0298ea82de5cda94a9d5bebaac105c82, type: 3}
+  spawnPosition: {x: -4.22, y: 2.5}

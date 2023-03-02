@@ -6,6 +6,7 @@ using Events;
 using Ingredients;
 using ScriptableObjects;
 using ScriptableObjects.Ingredients;
+using TMPro;
 
 
 namespace Core
@@ -16,6 +17,12 @@ namespace Core
         [SerializeField] private PotionList potions;
         [SerializeField] private Potion potionItemPrefab;
         
+
+        [Header("Updating Counters for Potions")]
+        public TMP_Text healthPotCounter;
+        public TMP_Text lovePotCounter;
+        public TMP_Text poisonPotCounter;
+
 
         SpriteRenderer sr;
         
@@ -44,10 +51,13 @@ namespace Core
 
         IEnumerator DelayMix(PotionData potionData)
         {
-            yield return new WaitForSeconds(1f);
-            var potionObject = Instantiate(potionItemPrefab, new Vector3(0, 1f), Quaternion.identity);
+            yield return new WaitForSeconds(.25f);
+            var potionObject = Instantiate(potionItemPrefab, potionData.spawnPosition, Quaternion.identity);
             potionObject.GetComponent<Potion>().PotionType = potionData;
-            
+            //potionData.howManyPotionsExist += 1;
+            //healthPotCounter.SetText(potionData.howManyPotionsExist.ToString());
+            //lovePotCounter.SetText(potionData.howManyPotionsExist.ToString());
+            //poisonPotCounter.SetText(potionData.howManyPotionsExist.ToString());
         }
 
         public void MixPotions()
