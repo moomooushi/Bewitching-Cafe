@@ -14,7 +14,10 @@ namespace Core
     {
         [SerializeField] private List<IngredientData> containedIngredients;
         [SerializeField] private PotionList potions;
-        [SerializeField] private GameObject potionItemPrefab;
+        [SerializeField] private Potion potionItemPrefab;
+        
+
+        SpriteRenderer sr;
         
         private void OnEnable()
         {
@@ -44,6 +47,7 @@ namespace Core
             yield return new WaitForSeconds(1f);
             var potionObject = Instantiate(potionItemPrefab, new Vector3(0, 1f), Quaternion.identity);
             potionObject.GetComponent<Potion>().PotionType = potionData;
+            
         }
 
         public void MixPotions()
@@ -55,6 +59,7 @@ namespace Core
 
             if (potionToMix != null)
             {
+                potionItemPrefab = potionToMix.potionPrefab;
                 StartCoroutine(DelayMix(potionToMix));
                 cauldronIngredientNames.Clear();
                 filterPotions.Clear();

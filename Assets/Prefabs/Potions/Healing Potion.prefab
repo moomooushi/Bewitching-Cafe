@@ -98,9 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61c6df87ef323db40b297f68eedf1d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  potionType: {fileID: 0}
-  particleOnDestroy: {fileID: 0}
-  <animationFadeOutTime>k__BackingField: 0
+  potionType: {fileID: 11400000, guid: d25429a2f77b3ad4bafc16df98a7285e, type: 2}
+  particleOnDestroy: {fileID: 9157105887711914197, guid: c4f829cb7dd4b864caf8832ec5b1ee55, type: 3}
+  <animationFadeOutTime>k__BackingField: 0.25
 --- !u!50 &6552591912286879383
 Rigidbody2D:
   serializedVersion: 4

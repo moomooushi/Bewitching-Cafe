@@ -17,3 +17,4 @@ MonoBehaviour:
   recipe:
   - {fileID: 11400000, guid: ea1e26911c995be4f8519645bd449530, type: 2}
   - {fileID: 11400000, guid: fb78d7cd0a306ff43b6c5f5d28f865c4, type: 2}
+  potionPrefab: {fileID: 9103136447890160117, guid: c6b3494564a09844a81e418bbf05c6ab, type: 3}

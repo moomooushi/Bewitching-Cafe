@@ -11,7 +11,7 @@ namespace Core
 {
     public class IngredientIdentifier : Receptacle
     {
-        [SerializeField] List<PotionData> recipes;
+        [SerializeField] List<PotionList> recipes;
         [SerializeField] List<Ingredient> containedIngredients;
 
         private void OnEnable()
@@ -51,8 +51,11 @@ namespace Core
             foreach (var i in children)
             {
                 var isDestroyable = i.gameObject.TryGetComponent(out IDestroyable destroyable);
-                if (isDestroyable)
+                if (isDestroyable) {
+                    Debug.Log("Destroy");
                     destroyable.DoDestroy();
+                }
+
             }
         }
     }

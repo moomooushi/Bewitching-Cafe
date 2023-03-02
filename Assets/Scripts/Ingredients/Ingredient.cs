@@ -41,13 +41,13 @@ namespace Ingredients
             UpdateValues();
         }
 
-        private void Update() 
-        {
-            if (gameObject.transform.position.y < -3) 
-            {
-                Destroy(gameObject);
-            }
-        }
+        // private void Update() 
+        // {
+        //     if (gameObject.transform.position.y < -3) 
+        //     {
+        //         Destroy(gameObject);
+        //     }
+        // }
 
         void UpdateValues()
         {
@@ -88,6 +88,7 @@ namespace Ingredients
             this.transform.DOScale(Vector3.zero, animationFadeOutTime); // Vector3 for where particle will spawn
             spriteRenderer.DOFade(0, animationFadeOutTime); // fade after sometime
             Destroy(particle, 2f); // destroy the particle after 2s
+            Destroy(this.gameObject);
         }
 
 
@@ -97,9 +98,9 @@ namespace Ingredients
             StartCoroutine(DoDelayedDestroy());
         }
 
-        private void OnDestroy() // Calls the IngredientDestroyEvent 
-        {
-            GameEvents.OnIngredientDestroyedEvent?.Invoke();
-        }
+        // private void OnDestroy() // Calls the IngredientDestroyEvent 
+        // {
+        //     GameEvents.OnIngredientDestroyedEvent?.Invoke();
+        // }
     }
 }

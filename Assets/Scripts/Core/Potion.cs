@@ -6,6 +6,7 @@ using ScriptableObjects;
 using UnityEngine;
 using DG.Tweening;
 using Unity.Mathematics;
+using TMPro;
 
 namespace Core
 {
@@ -13,6 +14,8 @@ namespace Core
     {
         [SerializeField] private PotionData potionType;
         private Rigidbody2D rb;
+
+        // public TMP_Text potionNameText;
 
         private SpriteRenderer sr;
         private Vector3 originalScale;
@@ -26,6 +29,7 @@ namespace Core
             set
             {
                 potionType = value;
+                // potionNameText.text = potionType.name;
             }
         }
 
@@ -33,12 +37,14 @@ namespace Core
         {
             sr = GetComponent<SpriteRenderer>();
             originalScale = transform.localScale;
+            sr.sprite = potionType.sprite;
         }
 
         private void OnEnable()
         {
             transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
             transform.DOScale(originalScale, .5f).SetEase(Ease.OutBounce);
+            Instantiate(particleOnDestroy, this.transform.position, Quaternion.identity);
             rb = GetComponent<Rigidbody2D>();
             rb.bodyType = RigidbodyType2D.Kinematic;
         }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Core;
 using ScriptableObjects.Ingredients;
 using UnityEngine;
 
@@ -8,8 +9,10 @@ namespace ScriptableObjects
     public class PotionData : ScriptableObject
     {
         [SerializeField] private string potionName;
-        [SerializeField] Sprite sprite;
+        public Sprite sprite;
         [SerializeField] List<IngredientData> recipe; // HashSet makes every item different.
+
+        public Potion potionPrefab;
 
         public List<IngredientData> Recipe => recipe;
     }
