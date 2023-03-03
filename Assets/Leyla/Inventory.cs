@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Ingredients;
+using ScriptableObjects.Ingredients;
 //using UnityEngine.UIElements;
 using UnityEngine.UI;
 
@@ -14,6 +16,8 @@ public class Inventory : MonoBehaviour
     
     [Header("Ingredient Storage")]
     public GameObject[] ingredientPrefabs;
+
+    string ingredientName;
 
 
     //This function is checking if there's enough of the ingredient. If there is, remove from amount - (which is child of label - (which is child of ingredient))
@@ -52,4 +56,5 @@ public class Inventory : MonoBehaviour
             selectedIngredient.GetComponent<Image>().enabled = false;
         }
     }
+
 }
