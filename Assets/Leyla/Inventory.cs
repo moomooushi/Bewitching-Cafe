@@ -17,6 +17,8 @@ public class Inventory : MonoBehaviour
     [Header("Ingredient Storage")]
     public GameObject[] ingredientPrefabs;
 
+    string ingredientName;
+
 
     //This function is checking if there's enough of the ingredient. If there is, remove from amount - (which is child of label - (which is child of ingredient))
     public void PickIngredient(string ingredientName)//ensure the button has the name of the ingredient its attached to.
@@ -54,4 +56,5 @@ public class Inventory : MonoBehaviour
             selectedIngredient.GetComponent<Image>().enabled = false;
         }
     }
+
 }
