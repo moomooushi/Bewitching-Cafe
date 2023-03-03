@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Ingredients;
+using ScriptableObjects.Ingredients;
 //using UnityEngine.UIElements;
 using UnityEngine.UI;
 

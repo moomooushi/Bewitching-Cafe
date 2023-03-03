@@ -9,6 +9,8 @@ namespace ScriptableObjects.Ingredients
         public new string name;
         public Sprite sprite;
         public float ingredientPrice;
+
+        public int amountOfIngredient;
     }
 
 }

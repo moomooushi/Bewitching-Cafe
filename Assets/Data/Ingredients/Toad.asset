@@ -15,3 +15,4 @@ MonoBehaviour:
   name: Toad
   sprite: {fileID: 21300000, guid: 5c8a65b01b48669418d26e0651b6487e, type: 3}
   ingredientPrice: 0
+  amountOfIngredient: 3
