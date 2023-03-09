@@ -7,7 +7,7 @@ public class SceneChange : MonoBehaviour
 {
     public void StartLevel()
     {
-        SceneManager.LoadScene("Tom");
+        SceneManager.LoadScene("Tom 1");
     }
 
     public void MainMenu()
@@ -18,5 +18,10 @@ public class SceneChange : MonoBehaviour
     public void What()
     {
         SceneManager.LoadScene("What");
+    }
+
+    public void Scavenge()
+    {
+        SceneManager.LoadScene("Scavenge Scene");
     }
 }
