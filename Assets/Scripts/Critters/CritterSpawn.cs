@@ -1,23 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Critters;
 
 public class CritterSpawn : MonoBehaviour
 {
-    [SerializeField] private Transform spawnArea;
-    [SerializeField] private GameObject spiderPrefab;
+    [SerializeField] GameObject critterPrefab;
+    [SerializeField] Vector2 spawnPos = new Vector2(9.57f, -4.58f);
+    [SerializeField] float critterSpeed;
 
-    private Vector2 spawnCoords = new Vector2(); // change ALL of this to scriptable objects
-
-
-
-
+    [SerializeField] private GameObject target;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnCritters", 1, 20);
+        InvokeRepeating("SpawnCritters", 1, 200);
     }
 
     // Update is called once per frame
@@ -27,7 +25,9 @@ public class CritterSpawn : MonoBehaviour
     }
 
     void SpawnCritters() {
-
-        Instantiate(spiderPrefab, spawnArea);
+        critterSpeed = Random.Range(5, 10);
+        float step = critterSpeed * Time.deltaTime;
+        Instantiate(critterPrefab, spawnPos, Quaternion.identity);
+        critterPrefab.transform.position = Vector2.MoveTowards(critterPrefab.transform.position, target.transform.position, step);
     }
 }

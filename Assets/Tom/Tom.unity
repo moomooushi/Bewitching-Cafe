@@ -1503,7 +1503,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &205888116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1516,8 +1516,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6fe4da6f82256849be22ba6aedfdec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnArea: {fileID: 0}
-  spiderPrefab: {fileID: 0}
+  critterPrefab: {fileID: 913426160788501891, guid: 2ba7cee7d1914174e9b8786557863c9a, type: 3}
+  spawnPos: {x: 9.57, y: -4.58}
+  critterSpeed: 0
+  target: {fileID: 0}
 --- !u!4 &205888117
 Transform:
   m_ObjectHideFlags: 0
@@ -5169,7 +5171,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &839704218
 Transform:
   m_ObjectHideFlags: 0
@@ -5182,7 +5184,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1491693538}
   - {fileID: 1118224766}
   m_Father: {fileID: 0}
   m_RootOrder: 13
@@ -5199,8 +5200,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6fe4da6f82256849be22ba6aedfdec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnArea: {fileID: 1491693538}
-  spiderPrefab: {fileID: 7454644353688286052, guid: a833cbbe3aeabee47b4eb6c8f08822da, type: 3}
+  critterPrefab: {fileID: 7454644353688286052, guid: a833cbbe3aeabee47b4eb6c8f08822da, type: 3}
+  spawnPos: {x: 9.57, y: -4.58}
+  critterSpeed: 2
+  target: {fileID: 0}
 --- !u!1 &848794581
 GameObject:
   m_ObjectHideFlags: 0
@@ -7236,7 +7239,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 839704218}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1118224767
 BoxCollider2D:
@@ -9027,37 +9030,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1489356411}
   m_CullTransparentMesh: 1
---- !u!1 &1491693537
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1491693538}
-  m_Layer: 0
-  m_Name: SpawnOne
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1491693538
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1491693537}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.57, y: -4.58, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 839704218}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1500676659
 GameObject:
   m_ObjectHideFlags: 0
