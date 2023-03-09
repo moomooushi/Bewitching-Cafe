@@ -262,7 +262,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -19.7, y: 90.3}
+  m_AnchoredPosition: {x: -19.7, y: 30}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &921164765
@@ -285,7 +285,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BEWITCHING CAFE
+  m_text: BEWITCH
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e4277bccf042b844ebe8d61ee0d7da72, type: 2}
   m_sharedMaterial: {fileID: -1058475468472694364, guid: e4277bccf042b844ebe8d61ee0d7da72, type: 2}

@@ -637,6 +637,7 @@ GameObject:
   - component: {fileID: 1649080307}
   - component: {fileID: 1649080306}
   - component: {fileID: 1649080305}
+  - component: {fileID: 1649080309}
   - component: {fileID: 1649080308}
   m_Layer: 5
   m_Name: Dialogue Box
@@ -680,8 +681,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textMesh: {fileID: 2094104991}
   message: 'Kat: Click on the spell books on the window so you know what you need'
-  delay: 0.06
-  visibleDuration: 2.5
+  delay: 0.03
+  visibleDuration: 2
   soundEffect: {fileID: 8300000, guid: daba9e38034741d46886883dd947a2db, type: 3}
 --- !u!114 &1649080306
 MonoBehaviour:
@@ -817,6 +818,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1649080309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1649080303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c83685b4bf49622429dd26f96df0c719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minTimeBetweenMessages: 1
+  maxTimeBetweenMessages: 5
+  textMeshPro: {fileID: 2094104991}
+  messages:
+  - Hello!
+  - How are you?
+  - Goodbye!
 --- !u!1001 &1896924049
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1004,8 +1024,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 11
+  m_fontSizeBase: 11
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
