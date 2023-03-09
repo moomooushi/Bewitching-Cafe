@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Love Potion
   m_EditorClassIdentifier: 
   potionName: Love Potion
-  sprite: {fileID: 21300000, guid: 89622058510267845827249481209314, type: 3}
+  sprite: {fileID: 21300000, guid: 80a17f4ccfbe81b409b260912812174b, type: 3}
   recipe:
   - {fileID: 11400000, guid: 8b57778279478bc42897f7d767c020b7, type: 2}
   - {fileID: 11400000, guid: 1befbf4357a537e488058c3817db5b68, type: 2}

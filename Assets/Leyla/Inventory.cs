@@ -25,6 +25,7 @@ public class Inventory : MonoBehaviour
     {
         foreach (GameObject ingredient in ingredients)//grabbing the gameobject based off its name so I dont have to attach a script to each ingredient
         {
+            print(ingredientName + ingredient.name);
             if (ingredientName == ingredient.name)
             {
                 selectedIngredient = ingredient;
