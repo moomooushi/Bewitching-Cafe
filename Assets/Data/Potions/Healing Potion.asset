@@ -19,4 +19,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1befbf4357a537e488058c3817db5b68, type: 2}
   howManyPotionsExist: 0
   potionPrefab: {fileID: 1035040471526825201, guid: 55c2d6f9ab9d9cf40873d63b5a68009f, type: 3}
-  spawnPosition: {x: -2.71, y: 2.5}
+  spawnPosition: {x: -2.65, y: 2.481}

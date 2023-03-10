@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/What.unity
     guid: b84e2553e70e87540aa57e28bc30c101
   - enabled: 1
-    path: Assets/Leyla/Tom 1.unity
+    path: Assets/Leyla/Leyla.unity
     guid: 54dae9a8a89d6744c926bf3f0663d6e8
   - enabled: 1
     path: Assets/Scenes/Scavenge Scene.unity
