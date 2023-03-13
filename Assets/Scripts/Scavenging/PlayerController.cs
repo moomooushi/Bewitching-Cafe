@@ -42,6 +42,10 @@ namespace Scavenging
             }
             animator.SetBool("isMoving", isMoving);
 
+            if (Input.GetKey(KeyCode.E))
+            {
+                
+            }
         }
 
         IEnumerator Move(Vector3 targetPos) // Makes player move from current to target position.

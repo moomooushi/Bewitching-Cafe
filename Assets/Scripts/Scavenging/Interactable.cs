@@ -1,19 +1,42 @@
+using System;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Scavenging
 {
     public class Interactable : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
+        public bool isInRange;
+        public KeyCode interactKey;
+        public UnityEvent interactAction;
+
+        private void Update()
         {
-        
+            if (isInRange)
+            {
+                if (Input.GetKeyDown(interactKey))
+                {
+                    interactAction.Invoke();
+                }
+            }
         }
 
-        // Update is called once per frame
-        void Update()
+        private void OnTriggerEnter2D(Collider2D col)
         {
-        
+            if (col.gameObject.CompareTag("Player"))
+            {
+                isInRange = true;
+                Debug.Log("Player in range");
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D other)
+        {
+            if (other.gameObject.CompareTag("Player"))
+            {
+                isInRange = false;
+                Debug.Log("Player out of range");
+            }
         }
     }
 }
