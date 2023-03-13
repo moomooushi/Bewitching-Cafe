@@ -1150,7 +1150,7 @@ GameObject:
   - component: {fileID: 122783068}
   - component: {fileID: 122783067}
   m_Layer: 5
-  m_Name: Description (2)
+  m_Name: SleepDescription
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1635,7 +1635,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1011140584}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3309,7 +3309,7 @@ RectTransform:
   - {fileID: 122783066}
   - {fileID: 1361499341}
   m_Father: {fileID: 1011140584}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7014,7 +7014,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1011140584}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8730,10 +8730,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 980048233}
-  - {fileID: 167428834}
-  - {fileID: 840242013}
   - {fileID: 1743217165}
   - {fileID: 474881079}
+  - {fileID: 167428834}
+  - {fileID: 840242013}
   m_Father: {fileID: 753884522}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13379,7 +13379,7 @@ GameObject:
   - component: {fileID: 1700295403}
   - component: {fileID: 1700295402}
   m_Layer: 5
-  m_Name: Description (2)
+  m_Name: EnergyDescription
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13619,7 +13619,7 @@ RectTransform:
   - {fileID: 1813465499}
   - {fileID: 200305821}
   m_Father: {fileID: 1011140584}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14245,7 +14245,7 @@ GameObject:
   - component: {fileID: 1813465501}
   - component: {fileID: 1813465500}
   m_Layer: 5
-  m_Name: Description (2)
+  m_Name: StrengthDescription
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

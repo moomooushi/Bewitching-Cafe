@@ -19,6 +19,21 @@ public class Inventory : MonoBehaviour
 
     string ingredientName;
 
+    GameObject potionLabel;
+
+    public void Update()
+    {
+        GameObject[] madePotions = GameObject.FindGameObjectsWithTag("Potion");
+        foreach (GameObject madePotion in madePotions)
+        {
+            if (madePotion.name == potionLabel.name)
+            {
+                //potionLabel.text += 1;
+            }
+        }
+    }
+
+
 
     //This function is checking if there's enough of the ingredient. If there is, remove from amount - (which is child of label - (which is child of ingredient))
     public void PickIngredient(string ingredientName)//ensure the button has the name of the ingredient its attached to.
