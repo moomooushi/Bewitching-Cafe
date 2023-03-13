@@ -19,6 +19,15 @@ public class LetterOrders : MonoBehaviour
 
     public int maxPotions;
     public int maxCustomers;
+
+    public int money;
+    public int ordersComplete;
+
+    public GameObject moneyCounter;
+    public GameObject orderCounter;
+
+    public GameObject correctOrder;
+    public GameObject wrongOrder;
     
     void Start()
     {
@@ -38,26 +47,40 @@ public class LetterOrders : MonoBehaviour
     {// if order is correct, new order, if not...? Check if potions are present in storage
         amountCount = 0;
         GameObject[] madePotions = GameObject.FindGameObjectsWithTag("Potion"); //make sure the potions have the tag on them
-        foreach (GameObject madePotion in madePotions)//checking if one of  the potions in the scene are what the customer asked for
+        foreach (GameObject madePotion in madePotions)//checking if one of the potions in the scene are what the customer asked for
         {
             if (madePotion.name == potion + "(Clone)")
             {
                 amountCount += 1;
             }
-            if (amount != amountCount)
-            {
-                print(madePotion.name + " is not " + potion);
-                letterText.GetComponent<TextMeshProUGUI>().text = "Hello Witch Cat,\n\nI Need:\n<u><b><color=#EA2E00>" + amount + " " + potion + "</color></b></u>\n\nThank you,\n" + potionCustomer;
-            }
         }
         if (amountCount >= amount)
         {
-            Scene scene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(scene.name);//until we have a way to scavenge resources or move on to cafe scene cuz we'll run out of ingredients
+            //Scene scene = SceneManager.GetActiveScene();
+            //SceneManager.LoadScene(scene.name);//until we have a way to scavenge resources or move on to cafe scene cuz we'll run out of ingredients
+            correctOrder.SetActive(true);
+            money += 125;
+            ordersComplete += 1;
+            moneyCounter.GetComponent<TextMeshProUGUI>().text = "$" + money;
+            orderCounter.GetComponent<TextMeshProUGUI>().text = ordersComplete + " Orders Completed";
+            foreach (GameObject madePotion in madePotions)//checking if one of the potions in the scene are what the customer asked for
+            {
+                if (madePotion.name == potion + "(Clone)")
+                {
+                    Destroy(madePotion);
+                }
+            }
+        }
+        else if (amount != amountCount)
+        {
+            letterText.GetComponent<TextMeshProUGUI>().text = "Hello Witch Cat,\n\nI Need:\n<u><b><color=#EA2E00>" + amount + " " + potion + "</color></b></u>\n\nThank you,\n" + potionCustomer;
+            wrongOrder.SetActive(true);
+            money -= 50;
+            moneyCounter.GetComponent<TextMeshProUGUI>().text = "$" + money;
         }
     }
 
-    void NewOrder()
+    public void NewOrder()
     {// Hello Witch Cat I need: (choose random potionTypes) Thanks, (potionCustomers)
         amount = Random.Range(1, 3);
         potion = potionTypes[Random.Range(0,maxPotions)];
@@ -65,15 +88,15 @@ public class LetterOrders : MonoBehaviour
         letterText.GetComponent<TextMeshProUGUI>().text = "Hello Witch Cat,\n\nI Need:\n<u>" + amount + " "+ potion + "</u>\n\nThank you,\n" + potionCustomer;
     }
 
-    private void Update()
-    {
-        GameObject[] madePotions = GameObject.FindGameObjectsWithTag("Potion"); //make sure the potions have the tag on them
-        foreach (GameObject madePotion in madePotions)//checking if one of  the potions in the scene are what the customer asked for
-        {
-            if (madePotion.name == potion + "(Clone)" && amount == amountCount)
-            {
-                letterText.GetComponent<TextMeshProUGUI>().text = "Hello Witch Cat,\n\nI Need:\n<u><color=#71C36B>" + amount + " " + potion + "</color></u>\n\nThank you,\n" + potionCustomer;
-            }
-        }
-    }
+    //private void Update()
+    //{
+    //    GameObject[] madePotions = GameObject.FindGameObjectsWithTag("Potion"); //make sure the potions have the tag on them
+    //    foreach (GameObject madePotion in madePotions)//checking if one of  the potions in the scene are what the customer asked for
+    //    {
+    //        if (madePotion.name == potion + "(Clone)" && amount == amountCount)
+    //        {
+    //            letterText.GetComponent<TextMeshProUGUI>().text = "Hello Witch Cat,\n\nI Need:\n<u><color=#71C36B>" + amount + " " + potion + "</color></u>\n\nThank you,\n" + potionCustomer;
+    //        }
+    //    }
+    //}
 }
