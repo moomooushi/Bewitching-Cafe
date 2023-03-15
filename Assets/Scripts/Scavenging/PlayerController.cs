@@ -7,6 +7,8 @@ namespace Scavenging
     {
         [SerializeField] private float moveSpeed;
 
+        public LayerMask solidObjectsLayer;
+
         private bool isMoving;
 
         private Vector2 input; // Creates input ref
@@ -36,12 +38,17 @@ namespace Scavenging
                     var targetPos = transform.position; // Gets current pos of player
                     targetPos.x += input.x; // Makes targetPos.x -1 (Left) or +1 (Right)
                     targetPos.y += input.y; // Makes targetPos.y -1 (Down) or +1 (Up)
-                
-                    StartCoroutine(Move(targetPos)); // Calls 'Move' enumerator
+
+                    if (isWalkable(targetPos)) // if the targetPos can be walked to.
+                    {
+                        StartCoroutine(Move(targetPos)); // Calls 'Move' enumerator
+                    }
+
                 }
             }
             animator.SetBool("isMoving", isMoving);
-
+            
+            // idk if this does anything. maybe dont touch it? idk, im not the boss of you.
             if (Input.GetKey(KeyCode.E))
             {
                 
@@ -59,6 +66,16 @@ namespace Scavenging
 
             transform.position = targetPos; // Makes players position the targetPosition
             isMoving = false; // Turns bool off to be used again
+        }
+
+        private bool isWalkable(Vector3 targetPos) // checks to see if the tile is walkable
+        {
+            if(Physics2D.OverlapCircle(targetPos, 0.05f, solidObjectsLayer) != null) // if the targetPosition is in a solidObjects layer, don't walk.
+            {
+                return false;
+            }
+
+            return true; // If not, then walk.
         }
     }
 }
