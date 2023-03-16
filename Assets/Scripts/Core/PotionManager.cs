@@ -61,17 +61,6 @@ namespace Core
         {
             if (potionObject.name.Contains(potion.name))
             {
-                // GameObject label = potion.transform.GetChild(0).gameObject;
-                // int.TryParse(label.GetComponent<TextMeshProUGUI>().text, out int number);
-                // number += 1;
-                // label.GetComponent<TextMeshProUGUI>().text = number.ToString();
-                // print(madePotion.name + " " + potion.name);
-
-                //print(label.GetComponent<TextMeshProUGUI>().text);
-
-                //label.GetComponent<TextMeshProUGUI>().text += 1;
-
-
                 GameObject label = potion.transform.GetChild(0).gameObject;
                 int.TryParse(label.GetComponent<TextMeshProUGUI>().text, out int number);
                 number += 1;
