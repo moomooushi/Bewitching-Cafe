@@ -19,13 +19,18 @@ namespace Scavenging
         [Header("Takes care of potion finding")]
         [SerializeField] private List<GameObject> potionRecipeUnlocks;
         [SerializeField] private int randNumberForPotion;
+        [SerializeField] private AudioClip ingredientFind;
+        [SerializeField] private AudioClip potionFind;
 
 
         public void FoundItem()
         {
             if (Input.GetKey(KeyCode.E))
+            {
                 randNumber = Random.Range(1, 50);
                 randNumberForPotion = Random.Range(1, 200);
+            }
+
 
 
             if (!interactionActivated)
@@ -37,7 +42,7 @@ namespace Scavenging
                 else if (randNumber >= 20)
                 {
                     StartCoroutine(ItemFound());
-                    if (randNumberForPotion > 77 && randNumberForPotion < 85) 
+                    if (randNumberForPotion >= 80 && randNumberForPotion <= 130) 
                     {
                         StartCoroutine(PotionFound());
                     }
@@ -63,6 +68,7 @@ namespace Scavenging
             itemReceivedText.SetText("You found a " + nameChange);
             number += 1;
             randomIngredientAdded[index].GetComponent<TextMeshProUGUI>().text = number.ToString();
+            AudioSource.PlayClipAtPoint(ingredientFind, transform.position, 0.8f);
             yield return new WaitForSeconds(2f);
             itemReceivedText.SetText("");
             interactionActivated = false;
@@ -71,8 +77,10 @@ namespace Scavenging
         IEnumerator PotionFound() 
         {
             int potionIndex = Random.Range(0, potionRecipeUnlocks.Count);
+            string nameChangePotion = potionRecipeUnlocks[potionIndex].name.Replace("Description", "Potion Recipe!");
             potionRecipeUnlocks[potionIndex].SetActive(true);
-            potionReceivedText.SetText("Wow! You found " + potionRecipeUnlocks[potionIndex]);
+            potionReceivedText.SetText("Wow! You found a(n) " + nameChangePotion);
+            AudioSource.PlayClipAtPoint(potionFind, transform.position, 0.55f);
             yield return new WaitForSeconds(2f);
             potionReceivedText.SetText("");
             potionRecipeUnlocks.Remove(potionRecipeUnlocks[potionIndex]);
