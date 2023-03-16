@@ -4,6 +4,8 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System;
+//using Random = System.Random;
 
 public class LetterOrders : MonoBehaviour
 {
@@ -28,6 +30,8 @@ public class LetterOrders : MonoBehaviour
 
     public GameObject correctOrder;
     public GameObject wrongOrder;
+    public GameObject[] potionLabel;
+    int i;
     
     void Start()
     {
@@ -67,18 +71,18 @@ public class LetterOrders : MonoBehaviour
             {
                 if (madePotion.name == potion + "(Clone)")
                 {
-                    while (int i > amount)
-                    Destroy(madePotion);
-                    foreach (GameObject potion in potionLabel)
-                    {
-                        if (potionObject.name.Contains(potion.name))
+                        Destroy(madePotion);
+                        foreach (GameObject potion in potionLabel)
                         {
-                           GameObject label = potion.transform.GetChild(0).gameObject;
-                           int.TryParse(label.GetComponent<TextMeshProUGUI>().text, out int number);
-                           number -= 1;
-                           label.GetComponent<TextMeshProUGUI>().text = number.ToString();
+                            print(madePotion.name + " " + potion.name);
+                            if (madePotion.name.Contains(potion.name))
+                            {
+                                GameObject label = potion.transform.GetChild(0).gameObject;
+                                int.TryParse(label.GetComponent<TextMeshProUGUI>().text, out int number);
+                                number = 0;
+                                label.GetComponent<TextMeshProUGUI>().text = number.ToString();
+                            }
                         }
-                    }
                 }
             }
         }
@@ -93,9 +97,9 @@ public class LetterOrders : MonoBehaviour
 
     public void NewOrder()
     {// Hello Witch Cat I need: (choose random potionTypes) Thanks, (potionCustomers)
-        amount = Random.Range(1, 3);
-        potion = potionTypes[Random.Range(0,maxPotions)];
-        potionCustomer = potionCustomers[Random.Range(0,maxCustomers)];
+        amount = UnityEngine.Random.Range(1, 3);
+        potion = potionTypes[UnityEngine.Random.Range(0,maxPotions)];
+        potionCustomer = potionCustomers[UnityEngine.Random.Range(0,maxCustomers)];
         letterText.GetComponent<TextMeshProUGUI>().text = "Hello Witch Cat,\n\nI Need:\n<u>" + amount + " "+ potion + "</u>\n\nThank you,\n" + potionCustomer;
     }
 
