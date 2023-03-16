@@ -3,19 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+[System.Serializable]
+public class CatMessage
+{
+    public string message;
+    public float visibleDuration = 2f;
+    public AudioClip soundEffect;
+}
+
 public class CatDialogue : MonoBehaviour
 {
     public TextMeshProUGUI textMesh;
-    public string message;
-    public float delay = 0.1f;
-    public float visibleDuration = 2f;
-    public AudioClip soundEffect;
+    public List<CatMessage> messages;
+    public float messageDelay = 1f;
 
-    private int currentIndex = 0;
-    private float lastTime;
-    private float visibleTime;
+    private int currentMessageIndex = 0;
     private AudioSource audioSource;
-    private bool isPlayingSound;
 
     private void Start()
     {
@@ -24,45 +27,48 @@ public class CatDialogue : MonoBehaviour
             textMesh = GetComponent<TextMeshProUGUI>();
         }
 
-        textMesh.text = "";
-        lastTime = Time.time;
-        visibleTime = Time.time;
-
         audioSource = GetComponent<AudioSource>();
+
+        if (messages.Count > 0)
+        {
+            DisplayCurrentMessage();
+        }
     }
 
-    private void Update()
+    private void DisplayCurrentMessage()
     {
-        if (currentIndex >= message.Length)
+        CatMessage currentMessage = messages[currentMessageIndex];
+        textMesh.text = currentMessage.message;
+
+        if (audioSource != null && currentMessage.soundEffect != null)
         {
-            // Check if the text has been visible for the specified duration.
-            if (Time.time - visibleTime >= visibleDuration)
-            {
-                // Disable the TextMeshPro text when the visible duration is over.
-                textMesh.enabled = false;
-            }
+            audioSource.PlayOneShot(currentMessage.soundEffect);
+        }
+
+        float displayTime = currentMessage.visibleDuration;
+        Invoke("HideCurrentMessage", displayTime);
+    }
+
+    private void HideCurrentMessage()
+    {
+        textMesh.enabled = false;
+        Invoke("DisplayNextMessage", messageDelay);
+    }
+
+    private void DisplayNextMessage()
+    {
+        currentMessageIndex++;
+
+        if (currentMessageIndex >= messages.Count)
+        {
+            // Disable the TextMeshPro text when all messages have been displayed.
+            textMesh.enabled = false;
             return;
         }
 
-        if (Time.time - lastTime >= delay)
-        {
-            lastTime = Time.time;
-            textMesh.text += message[currentIndex];
-            currentIndex++;
-
-            if (!isPlayingSound)
-            {
-                // Play the sound effect at the start of the sentence.
-                if (message[currentIndex - 1] == ' ' && soundEffect != null)
-                {
-                    audioSource.PlayOneShot(soundEffect);
-                    isPlayingSound = true;
-                }
-            }
-        }
-
-        // Update the visible time every frame while the text is still being generated.
-        visibleTime = Time.time;
+        textMesh.enabled = true;
+        DisplayCurrentMessage();
     }
 }
+
 
