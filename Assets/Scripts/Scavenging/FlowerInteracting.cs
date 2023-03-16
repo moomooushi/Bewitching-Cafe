@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 using Unity.VisualScripting;
+using System.Collections.Generic;
 
 namespace Scavenging
 {
@@ -11,11 +12,20 @@ namespace Scavenging
         private bool interactionActivated = false;
         [SerializeField] private GameObject[] randomIngredientAdded;
         [SerializeField] private TextMeshProUGUI itemReceivedText;
+        [SerializeField] private TextMeshProUGUI potionReceivedText;
+        
+
+
+        [Header("Takes care of potion finding")]
+        [SerializeField] private List<GameObject> potionRecipeUnlocks;
+        [SerializeField] private int randNumberForPotion;
+
 
         public void FoundItem()
         {
             if (Input.GetKey(KeyCode.E))
                 randNumber = Random.Range(1, 50);
+                randNumberForPotion = Random.Range(1, 200);
 
 
             if (!interactionActivated)
@@ -27,6 +37,10 @@ namespace Scavenging
                 else if (randNumber >= 20)
                 {
                     StartCoroutine(ItemFound());
+                    if (randNumberForPotion > 77 && randNumberForPotion < 85) 
+                    {
+                        StartCoroutine(PotionFound());
+                    }
                 }
             }
             interactionActivated = true;
@@ -52,6 +66,16 @@ namespace Scavenging
             yield return new WaitForSeconds(2f);
             itemReceivedText.SetText("");
             interactionActivated = false;
+        }
+
+        IEnumerator PotionFound() 
+        {
+            int potionIndex = Random.Range(0, potionRecipeUnlocks.Count);
+            potionRecipeUnlocks[potionIndex].SetActive(true);
+            potionReceivedText.SetText("Wow! You found " + potionRecipeUnlocks[potionIndex]);
+            yield return new WaitForSeconds(2f);
+            potionReceivedText.SetText("");
+            potionRecipeUnlocks.Remove(potionRecipeUnlocks[potionIndex]);
         }
     }
 }
