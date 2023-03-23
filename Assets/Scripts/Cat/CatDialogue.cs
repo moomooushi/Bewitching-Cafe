@@ -20,7 +20,7 @@ public class CatDialogue : MonoBehaviour
     private int currentMessageIndex = 0;
     private AudioSource audioSource;
 
-    private void Start()
+    public void StartGame()
     {
         if (textMesh == null)
         {
