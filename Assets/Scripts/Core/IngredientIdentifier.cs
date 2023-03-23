@@ -45,7 +45,7 @@ namespace Core
             }
         }
 
-        void DestroyItemsInCauldron()
+        public void DestroyItemsInCauldron()
         {
             List<Transform> children = this.GetComponentsInChildren<Transform>().ToList(); // gets all transforms in cauldron and converts it to lists
             foreach (var i in children)

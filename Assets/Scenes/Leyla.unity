@@ -628,6 +628,9 @@ MonoBehaviour:
   - Healing Potion
   - Poison Potion
   - Love Potion
+  - Strength Potion
+  - Sleep Potion
+  - Energy Potion
   potionCustomers:
   - Karl the Koala
   - Dan the Duck
@@ -3736,6 +3739,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1704769013}
+        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
+        m_MethodName: Buy
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Mandrake
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &188397285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5309,6 +5324,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1704769013}
+        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
+        m_MethodName: Buy
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Toxic Butterfly
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &372211187
@@ -11526,6 +11553,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1704769013}
+        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
+        m_MethodName: Buy
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Rose Quartz
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &881408113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15652,6 +15691,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1704769013}
+        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
+        m_MethodName: Buy
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Toad
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1183855318
@@ -27705,6 +27756,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1704769013}
+        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
+        m_MethodName: Buy
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Mushy
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1930401293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27938,6 +28001,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1704769013}
+        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
+        m_MethodName: Buy
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Carnelian
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1947695552
@@ -29244,6 +29319,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1704769013}
+        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
+        m_MethodName: Buy
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Beetle
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2060280190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30172,6 +30259,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1704769013}
+        m_TargetAssemblyTypeName: Inventory, Assembly-CSharp
+        m_MethodName: Buy
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Skull
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2127891468
