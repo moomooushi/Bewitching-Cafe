@@ -42,7 +42,7 @@ namespace Scavenging
                 else if (randNumber >= 20)
                 {
                     StartCoroutine(ItemFound());
-                    if (randNumberForPotion >= 80 && randNumberForPotion <= 130) 
+                    if (randNumberForPotion >= 80 && randNumberForPotion <= 100) 
                     {
                         StartCoroutine(PotionFound());
                     }

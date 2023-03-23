@@ -289,7 +289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: randomIngredientAdded.Array.size
-      value: 9
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: potionRecipeUnlocks.Array.data[0]
@@ -339,6 +339,18 @@ PrefabInstance:
       propertyPath: randomIngredientAdded.Array.data[8]
       value: 
       objectReference: {fileID: 1883793088}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[9]
+      value: 
+      objectReference: {fileID: 1823341065}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[10]
+      value: 
+      objectReference: {fileID: 1823341065}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[11]
+      value: 
+      objectReference: {fileID: 1823341065}
     - target: {fileID: 5233601778873128745, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -2392,6 +2404,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1246687969}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &124899235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3959,7 +3983,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: randomIngredientAdded.Array.size
-      value: 9
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: potionRecipeUnlocks.Array.data[0]
@@ -4009,6 +4033,18 @@ PrefabInstance:
       propertyPath: randomIngredientAdded.Array.data[8]
       value: 
       objectReference: {fileID: 1883793088}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[9]
+      value: 
+      objectReference: {fileID: 1823341065}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[10]
+      value: 
+      objectReference: {fileID: 1823341065}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[11]
+      value: 
+      objectReference: {fileID: 1823341065}
     - target: {fileID: 5233601778873128745, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -4104,7 +4140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: randomIngredientAdded.Array.size
-      value: 9
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: potionRecipeUnlocks.Array.data[0]
@@ -4154,6 +4190,18 @@ PrefabInstance:
       propertyPath: randomIngredientAdded.Array.data[8]
       value: 
       objectReference: {fileID: 1883793088}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[9]
+      value: 
+      objectReference: {fileID: 1823341065}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[10]
+      value: 
+      objectReference: {fileID: 1823341065}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[11]
+      value: 
+      objectReference: {fileID: 1823341065}
     - target: {fileID: 5233601778873128745, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -4533,10 +4581,9 @@ GameObject:
   - component: {fileID: 263201893}
   - component: {fileID: 263201899}
   - component: {fileID: 263201898}
-  - component: {fileID: 263201897}
-  - component: {fileID: 263201896}
   - component: {fileID: 263201895}
   - component: {fileID: 263201894}
+  - component: {fileID: 263201900}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4606,42 +4653,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &263201896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 263201892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8be1a587fefcb6f4aa14f78f77ed7056, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  randNumber: 0
-  randomIngredientAdded: []
-  itemReceivedText: {fileID: 0}
-  potionReceivedText: {fileID: 0}
-  potionRecipeUnlocks: []
-  randNumberForPotion: 0
-  ingredientFind: {fileID: 0}
-  potionFind: {fileID: 0}
---- !u!114 &263201897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 263201892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 886e6cfee7d7a58498f366816d582498, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 5
-  solidObjectsLayer:
-    serializedVersion: 2
-    m_Bits: 64
 --- !u!95 &263201898
 Animator:
   serializedVersion: 4
@@ -4714,6 +4725,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &263201900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 263201892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 886e6cfee7d7a58498f366816d582498, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 3
+  solidObjectsLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!4 &282421307 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4610197504323815633, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
@@ -10363,7 +10390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: randomIngredientAdded.Array.size
-      value: 9
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: potionRecipeUnlocks.Array.data[0]
@@ -10413,6 +10440,18 @@ PrefabInstance:
       propertyPath: randomIngredientAdded.Array.data[8]
       value: 
       objectReference: {fileID: 1883793088}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[9]
+      value: 
+      objectReference: {fileID: 1823341065}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[10]
+      value: 
+      objectReference: {fileID: 1823341065}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[11]
+      value: 
+      objectReference: {fileID: 1823341065}
     - target: {fileID: 5233601778873128745, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -10777,7 +10816,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: randomIngredientAdded.Array.size
-      value: 9
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: potionRecipeUnlocks.Array.data[0]
@@ -10827,6 +10866,18 @@ PrefabInstance:
       propertyPath: randomIngredientAdded.Array.data[8]
       value: 
       objectReference: {fileID: 1883793088}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[9]
+      value: 
+      objectReference: {fileID: 1823341065}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[10]
+      value: 
+      objectReference: {fileID: 1823341065}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[11]
+      value: 
+      objectReference: {fileID: 1823341065}
     - target: {fileID: 5233601778873128745, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -12084,7 +12135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: randomIngredientAdded.Array.size
-      value: 9
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: potionRecipeUnlocks.Array.data[0]
@@ -12134,6 +12185,18 @@ PrefabInstance:
       propertyPath: randomIngredientAdded.Array.data[8]
       value: 
       objectReference: {fileID: 1883793088}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[9]
+      value: 
+      objectReference: {fileID: 1823341065}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[10]
+      value: 
+      objectReference: {fileID: 1823341065}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[11]
+      value: 
+      objectReference: {fileID: 1823341065}
     - target: {fileID: 5233601778873128745, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -12499,7 +12562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: randomIngredientAdded.Array.size
-      value: 9
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: potionRecipeUnlocks.Array.data[0]
@@ -12549,6 +12612,18 @@ PrefabInstance:
       propertyPath: randomIngredientAdded.Array.data[8]
       value: 
       objectReference: {fileID: 1883793088}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[9]
+      value: 
+      objectReference: {fileID: 1823341065}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[10]
+      value: 
+      objectReference: {fileID: 1823341065}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[11]
+      value: 
+      objectReference: {fileID: 1823341065}
     - target: {fileID: 5233601778873128745, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -14908,7 +14983,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: randomIngredientAdded.Array.size
-      value: 9
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: potionRecipeUnlocks.Array.data[0]
@@ -14958,6 +15033,18 @@ PrefabInstance:
       propertyPath: randomIngredientAdded.Array.data[8]
       value: 
       objectReference: {fileID: 1883793088}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[9]
+      value: 
+      objectReference: {fileID: 1823341065}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[10]
+      value: 
+      objectReference: {fileID: 1823341065}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[11]
+      value: 
+      objectReference: {fileID: 1823341065}
     - target: {fileID: 5233601778873128745, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -15087,6 +15174,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1246687969}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1143075708
 MonoBehaviour:
@@ -16382,7 +16481,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: randomIngredientAdded.Array.size
-      value: 9
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: potionRecipeUnlocks.Array.data[0]
@@ -16432,6 +16531,18 @@ PrefabInstance:
       propertyPath: randomIngredientAdded.Array.data[8]
       value: 
       objectReference: {fileID: 1883793088}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[9]
+      value: 
+      objectReference: {fileID: 1823341065}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[10]
+      value: 
+      objectReference: {fileID: 1823341065}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[11]
+      value: 
+      objectReference: {fileID: 1823341065}
     - target: {fileID: 5233601778873128745, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -17075,12 +17186,12 @@ GameObject:
   - component: {fileID: 1246687972}
   - component: {fileID: 1246687971}
   m_Layer: 0
-  m_Name: Canvas
+  m_Name: ScavCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1246687970
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23776,7 +23887,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: randomIngredientAdded.Array.size
-      value: 9
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: potionRecipeUnlocks.Array.data[0]
@@ -23826,6 +23937,18 @@ PrefabInstance:
       propertyPath: randomIngredientAdded.Array.data[8]
       value: 
       objectReference: {fileID: 1883793088}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[9]
+      value: 
+      objectReference: {fileID: 1823341065}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[10]
+      value: 
+      objectReference: {fileID: 1823341065}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[11]
+      value: 
+      objectReference: {fileID: 1823341065}
     - target: {fileID: 5233601778873128745, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -28612,7 +28735,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: randomIngredientAdded.Array.size
-      value: 9
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: potionRecipeUnlocks.Array.data[0]
@@ -28662,6 +28785,18 @@ PrefabInstance:
       propertyPath: randomIngredientAdded.Array.data[8]
       value: 
       objectReference: {fileID: 1883793088}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[9]
+      value: 
+      objectReference: {fileID: 1823341065}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[10]
+      value: 
+      objectReference: {fileID: 1823341065}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[11]
+      value: 
+      objectReference: {fileID: 1823341065}
     - target: {fileID: 5233601778873128745, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -29635,7 +29770,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: randomIngredientAdded.Array.size
-      value: 9
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: potionRecipeUnlocks.Array.data[0]
@@ -29685,6 +29820,18 @@ PrefabInstance:
       propertyPath: randomIngredientAdded.Array.data[8]
       value: 
       objectReference: {fileID: 1883793088}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[9]
+      value: 
+      objectReference: {fileID: 1823341065}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[10]
+      value: 
+      objectReference: {fileID: 1823341065}
+    - target: {fileID: 4610197504323815638, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
+      propertyPath: randomIngredientAdded.Array.data[11]
+      value: 
+      objectReference: {fileID: 1823341065}
     - target: {fileID: 5233601778873128745, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}
       propertyPath: interactAction.m_PersistentCalls.m_Calls.Array.size
       value: 1
