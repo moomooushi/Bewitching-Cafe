@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1580997707072658133}
   - component: {fileID: -1811525310328412818}
   m_Layer: 0
-  m_Name: Sleeping Potion
+  m_Name: Sleep Potion
   m_TagString: Potion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

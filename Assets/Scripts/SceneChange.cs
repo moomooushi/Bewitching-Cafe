@@ -7,7 +7,7 @@ public class SceneChange : MonoBehaviour
 {
     public void StartLevel()
     {
-        SceneManager.LoadScene("Tom 1");
+        SceneManager.LoadScene("Leyla");
     }
 
     public void MainMenu()

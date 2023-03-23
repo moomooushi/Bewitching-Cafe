@@ -102,16 +102,4 @@ public class LetterOrders : MonoBehaviour
         potionCustomer = potionCustomers[UnityEngine.Random.Range(0,maxCustomers)];
         letterText.GetComponent<TextMeshProUGUI>().text = "Hello Witch Cat,\n\nI Need:\n<u>" + amount + " "+ potion + "</u>\n\nThank you,\n" + potionCustomer;
     }
-
-    //private void Update()
-    //{
-    //    GameObject[] madePotions = GameObject.FindGameObjectsWithTag("Potion"); //make sure the potions have the tag on them
-    //    foreach (GameObject madePotion in madePotions)//checking if one of  the potions in the scene are what the customer asked for
-    //    {
-    //        if (madePotion.name == potion + "(Clone)" && amount == amountCount)
-    //        {
-    //            letterText.GetComponent<TextMeshProUGUI>().text = "Hello Witch Cat,\n\nI Need:\n<u><color=#71C36B>" + amount + " " + potion + "</color></u>\n\nThank you,\n" + potionCustomer;
-    //        }
-    //    }
-    //}
 }
