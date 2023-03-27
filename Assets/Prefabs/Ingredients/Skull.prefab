@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -2056378093735449053}
   m_Layer: 0
   m_Name: Skull
-  m_TagString: Skull
+  m_TagString: Ingredients
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

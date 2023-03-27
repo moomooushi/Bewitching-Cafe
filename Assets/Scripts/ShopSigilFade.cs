@@ -19,11 +19,11 @@ public class ShopSigilFade : MonoBehaviour
         }
         if (lightUp == true)
         {
-            canvasGroup.alpha += 0.2f * Time.deltaTime;
+            canvasGroup.alpha += 0.3f * Time.deltaTime;
         }
         else if (lightUp == false)
         {
-            canvasGroup.alpha -= 0.2f * Time.deltaTime;
+            canvasGroup.alpha -= 0.4f * Time.deltaTime;
         }
     }
 }

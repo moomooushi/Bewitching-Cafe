@@ -11,6 +11,8 @@ namespace Core
 {
     public class IngredientIdentifier : Receptacle
     {
+        [SerializeField] AudioSource cauldronSplash;
+
         [SerializeField] List<PotionList> recipes;
         [SerializeField] List<Ingredient> containedIngredients;
 
@@ -32,7 +34,7 @@ namespace Core
                 GameEvents.OnIngredientEnterCauldron?.Invoke(collision.GetComponent<Ingredient>());
                 containedIngredients.Add(ingredient);
                 // invoke event, and send contained ingredients to potion manager. event thats expecting a list of ingredients.
-            
+                cauldronSplash.Play();
             } 
         }
 

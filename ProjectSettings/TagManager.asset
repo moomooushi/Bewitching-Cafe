@@ -11,6 +11,8 @@ TagManager:
   - PinkCrystal
   - FxTemporaire
   - Potion
+  - Minerals
+  - Ingredients
   layers:
   - Default
   - TransparentFX

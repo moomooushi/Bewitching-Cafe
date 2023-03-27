@@ -24,9 +24,6 @@ namespace Core
         public TMP_Text poisonPotCounter;
 
         public GameObject[] potionLabel;
-
-
-        SpriteRenderer sr;
         
         private void OnEnable()
         {
@@ -58,15 +55,15 @@ namespace Core
             potionObject.GetComponent<Potion>().PotionType = potionData;
             
             foreach (GameObject potion in potionLabel)
-        {
-            if (potionObject.name.Contains(potion.name))
             {
-                GameObject label = potion.transform.GetChild(0).gameObject;
-                int.TryParse(label.GetComponent<TextMeshProUGUI>().text, out int number);
-                number += 1;
-                label.GetComponent<TextMeshProUGUI>().text = number.ToString();
+                if (potionObject.name.Contains(potion.name))
+                {
+                    GameObject label = potion.transform.GetChild(0).gameObject;
+                    int.TryParse(label.GetComponent<TextMeshProUGUI>().text, out int number);
+                    number += 1;
+                    label.GetComponent<TextMeshProUGUI>().text = number.ToString();
+                }
             }
-        }
         }
 
         public void MixPotions()

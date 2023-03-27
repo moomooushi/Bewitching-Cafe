@@ -12,6 +12,7 @@ public class Inventory : MonoBehaviour
     public GameObject[] ingredients;
     public GameObject selectedIngredient;
     public GameObject ingredientSpawnPoint;
+    public GameObject poof;
     
     [Header("Ingredient Storage")]
     public GameObject[] ingredientPrefabs;
@@ -54,8 +55,10 @@ public class Inventory : MonoBehaviour
         }
         if (number == 0)
         {
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Instantiate(poof, new Vector3(mousePos.x, mousePos.y, 0), Quaternion.identity);
             print("youre out of " + ingredientName);
-            selectedIngredient.GetComponent<Image>().enabled = false;
+            selectedIngredient.GetComponent<Image>().enabled = false;   
         }
     }
     private void Update()
@@ -68,6 +71,21 @@ public class Inventory : MonoBehaviour
             if (number > 0)
             {
                 ingredient.GetComponent<Image>().enabled = true;
+            }
+        }
+    }
+
+    public void IncreaseIngredient(string name)
+    {
+        foreach (GameObject ingredient in ingredients)
+        {
+            if (name.Contains(ingredient.name))
+            {
+                GameObject label = ingredient.transform.GetChild(0).gameObject;
+                GameObject amount = label.transform.GetChild(0).gameObject;
+                int.TryParse(amount.GetComponent<TextMeshProUGUI>().text, out int number);
+                number += 1;
+                amount.GetComponent<TextMeshProUGUI>().text = number.ToString();
             }
         }
     }
