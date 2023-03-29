@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CleanUp : MonoBehaviour
 {
-    public void CleanUpMess()//removes leftover game object clones for transitioning
+    public void CleanUpMess(string where)//removes leftover game object clones for transitioning
     {
         GameObject[] minerals = GameObject.FindGameObjectsWithTag("Minerals");
         foreach (GameObject mineral in minerals)
@@ -16,10 +16,20 @@ public class CleanUp : MonoBehaviour
         {
             Destroy(ingredient);
         }
-        GameObject[] Mandrake = GameObject.FindGameObjectsWithTag("Ingredients");
-        foreach (GameObject ingredient in ingredients)
-        {
-            Destroy(ingredient);
-        }
+        //GameObject[] potions = GameObject.FindGameObjectsWithTag("Potion");
+        //if (where == "Mine")
+        //{
+        //    foreach (GameObject potion in potions)
+        //    {
+        //        potion.SetActive(false);
+        //    }
+        //}
+        //else
+        //{
+        //    foreach (GameObject potion in potions)
+        //    {
+        //        potion.SetActive(true);
+        //    }
+        //}
     }
 }

@@ -31,19 +31,21 @@ public class LetterOrders : MonoBehaviour
     public GameObject correctOrder;
     public GameObject wrongOrder;
     public GameObject[] potionLabel;
-    int i;
+    [SerializeField] int maxPotionTypes;
+    [SerializeField] GameObject reward;
+    [SerializeField] GameObject[] mysteryRecipes;
+    [SerializeField] GameObject[] realRecipes;
+    [SerializeField] GameObject unlockNotif;
+    [SerializeField] AudioSource unlockAudio;
     
     void Start()
     {
-        foreach(string potion in potionTypes)
-        {
-            maxPotions ++;
-        }
         foreach(string customer in potionCustomers)
         {
             maxCustomers ++; // get max for randomly choosing the customer later. This makes it easer to add on more customers in the inspector as we dont need to change the maximum manually
         }
         amountCount = 0;
+        maxPotionTypes = 3;
         NewOrder();
     }
 
@@ -63,7 +65,21 @@ public class LetterOrders : MonoBehaviour
             //Scene scene = SceneManager.GetActiveScene();
             //SceneManager.LoadScene(scene.name);//until we have a way to scavenge resources or move on to cafe scene cuz we'll run out of ingredients
             correctOrder.SetActive(true);
-            money += 125;
+            if (potion == "Poison Potion" || potion == "Strength Potion")
+            {
+                money += 200 * amount;
+                reward.GetComponent<TextMeshProUGUI>().text = "Thank you!<br><br>+ $" + (200 * amount).ToString();
+            }
+            else if (potion == "Love Potion")
+            {
+                money += 150 * amount;
+                reward.GetComponent<TextMeshProUGUI>().text = "Thank you!<br><br>+ $" + (150 * amount).ToString();
+            }
+            else
+            {
+                money += 100 * amount;
+                reward.GetComponent<TextMeshProUGUI>().text = "Thank you!<br><br>+ $" + (100 * amount).ToString();
+            }
             ordersComplete += 1;
             moneyCounter.GetComponent<TextMeshProUGUI>().text = "$" + money;
             orderCounter.GetComponent<TextMeshProUGUI>().text = ordersComplete + " Orders Completed";
@@ -71,19 +87,47 @@ public class LetterOrders : MonoBehaviour
             {
                 if (madePotion.name == potion + "(Clone)")
                 {
-                        Destroy(madePotion);
-                        foreach (GameObject potion in potionLabel)
+                    Destroy(madePotion);
+                    foreach (GameObject potion in potionLabel)
+                    {
+                        print(madePotion.name + " " + potion.name);
+                        if (madePotion.name.Contains(potion.name))
                         {
-                            print(madePotion.name + " " + potion.name);
-                            if (madePotion.name.Contains(potion.name))
-                            {
-                                GameObject label = potion.transform.GetChild(0).gameObject;
-                                int.TryParse(label.GetComponent<TextMeshProUGUI>().text, out int number);
-                                number = 0;
-                                label.GetComponent<TextMeshProUGUI>().text = number.ToString();
-                            }
+                            GameObject label = potion.transform.GetChild(0).gameObject;
+                            int.TryParse(label.GetComponent<TextMeshProUGUI>().text, out int number);
+                            number = 0;
+                            label.GetComponent<TextMeshProUGUI>().text = number.ToString();
                         }
+
+                    }
                 }
+            }
+            if (orderCounter.GetComponent<TextMeshProUGUI>().text == "3 Orders Completed")
+            {
+                maxPotionTypes++;
+                unlockNotif.SetActive(true);
+                unlockNotif.GetComponentInChildren<TextMeshProUGUI>().text = "You unlocked Energy Potion";
+                mysteryRecipes[0].SetActive(false);
+                realRecipes[0].SetActive(true);
+                unlockAudio.Play();
+            }
+            if (orderCounter.GetComponent<TextMeshProUGUI>().text == "6 Orders Completed")
+            {
+                maxPotionTypes++;
+                mysteryRecipes[1].SetActive(false);
+                unlockNotif.SetActive(true);
+                unlockNotif.GetComponentInChildren<TextMeshProUGUI>().text = "You unlocked Strength Potion";
+                realRecipes[1].SetActive(true);
+                unlockAudio.Play();
+            }
+            if (orderCounter.GetComponent<TextMeshProUGUI>().text == "9 Orders Completed")
+            {
+                maxPotionTypes++;
+                mysteryRecipes[2].SetActive(false);
+                unlockNotif.SetActive(true);
+                unlockNotif.GetComponentInChildren<TextMeshProUGUI>().text = "You unlocked Sleep Potion";
+                realRecipes[2].SetActive(true);
+                unlockAudio.Play();
             }
         }
         else if (amount != amountCount)
@@ -98,7 +142,7 @@ public class LetterOrders : MonoBehaviour
     public void NewOrder()
     {// Hello Witch Cat I need: (choose random potionTypes) Thanks, (potionCustomers)
         amount = UnityEngine.Random.Range(1, 3);
-        potion = potionTypes[UnityEngine.Random.Range(0,maxPotions)];
+        potion = potionTypes[UnityEngine.Random.Range(0, maxPotionTypes)];
         potionCustomer = potionCustomers[UnityEngine.Random.Range(0,maxCustomers)];
         letterText.GetComponent<TextMeshProUGUI>().text = "Hello Witch Cat,\n\nI Need:\n<u>" + amount + " "+ potion + "</u>\n\nThank you,\n" + potionCustomer;
     }
