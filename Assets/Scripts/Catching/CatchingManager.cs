@@ -13,13 +13,24 @@ public class CatchingManager : MonoBehaviour
         [SerializeField] AudioSource[] catchingAudioSource;
 
         [SerializeField] private GameObject butterflies;
-        // [SerializeField] private GameObject toads;
-        // [SerializeField] private GameObject beetles;
+        [SerializeField] private GameObject toads;
+        [SerializeField] private GameObject beetles;
 
     // Start is called before the first frame update
     public void SpawnCatchables() {
-        for (int i = 0; i < Random.Range(1, 3); i++) {
+        for (int i = 0; i < Random.Range(1, 5); i++) {
+            Debug.Log("Spawned butterflies");
             Instantiate(butterflies, new Vector3(Random.Range(-8.88f, 8.5f), Random.Range(1.3f, 3.9f), 0), Quaternion.identity);
+        }
+        for (int i = 0; i < Random.Range(1, 5); i++)
+        {
+            Debug.Log("Spawned toads");
+            Instantiate(toads, new Vector3(Random.Range(-8.19f, 8.33f), -4.24f, 0), Quaternion.identity);
+        }
+        for (int i = 0; i < Random.Range(1, 5); i++)
+        {
+            Debug.Log("Spawned beetles");
+            Instantiate(beetles, new Vector3(Random.Range(-8.9f, 8.9f), -0.68f, 0), Quaternion.identity);
         }
     }
 
