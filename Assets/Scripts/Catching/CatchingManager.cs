@@ -12,10 +12,15 @@ public class CatchingManager : MonoBehaviour
 
         [SerializeField] AudioSource[] catchingAudioSource;
 
+        [SerializeField] private GameObject butterflies;
+        // [SerializeField] private GameObject toads;
+        // [SerializeField] private GameObject beetles;
+
     // Start is called before the first frame update
-    void Start()
-    {
-        
+    public void SpawnCatchables() {
+        for (int i = 0; i < Random.Range(1, 3); i++) {
+            Instantiate(butterflies, new Vector3(Random.Range(-8.88f, 8.5f), Random.Range(1.3f, 3.9f), 0), Quaternion.identity);
+        }
     }
 
     // Update is called once per frame
