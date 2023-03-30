@@ -17,6 +17,11 @@ public class RandomMovement : MonoBehaviour
     public float maxY;
 
     private Collider2D movementAreaCollider;
+
+    [SerializeField] private int timer;
+
+    private float nextActionTime = 0.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,13 +32,17 @@ public class RandomMovement : MonoBehaviour
     void FixedUpdate()
     {
         // generate a new random position
-        float randomX = Random.Range(minX, maxX);
-        float randomY = Random.Range(minY, maxY);
-        Vector2 targetPosition = new Vector2(randomX, randomY);
+        if (Time.time > nextActionTime) {
+            nextActionTime = Time.time + timer;
+            float randomX = Random.Range(minX, maxX);
+            float randomY = Random.Range(minY, maxY);
+        
+            Vector2 targetPosition = new Vector2(randomX, randomY);
 
         // calculate direction and set velocity
         Vector2 direction = (targetPosition - (Vector2)transform.position).normalized;
         GetComponent<Rigidbody2D>().velocity = direction * speed * Time.deltaTime;
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D col)

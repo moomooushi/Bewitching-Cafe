@@ -631,6 +631,12 @@ MonoBehaviour:
   correctOrder: {fileID: 0}
   wrongOrder: {fileID: 0}
   potionLabel: []
+  maxPotionTypes: 0
+  reward: {fileID: 0}
+  mysteryRecipes: []
+  realRecipes: []
+  unlockNotif: {fileID: 0}
+  unlockAudio: {fileID: 0}
 --- !u!1 &50982786
 GameObject:
   m_ObjectHideFlags: 0
@@ -5766,8 +5772,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 875225245}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.99, y: 2, z: 0}
-  m_LocalScale: {x: 8, y: 4, z: 1}
+  m_LocalPosition: {x: 1.04, y: 0.3, z: 0}
+  m_LocalScale: {x: 18.806025, y: 12.405377, z: 1.0557768}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 181041327}
@@ -7242,6 +7248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb9eeb5bde4e0384faa7b8025c43b3b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cauldronSplash: {fileID: 0}
   recipes:
   - {fileID: 11400000, guid: dc80143b79901594ca4a237858603468, type: 2}
   containedIngredients: []
@@ -8768,7 +8775,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1135418718}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.23, y: 2.08, z: 0}
+  m_LocalPosition: {x: 0.82, y: 0.92, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8789,9 +8796,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 50
   minX: 0
-  maxX: 8
+  maxX: 10
   minY: 0
-  maxY: 4
+  maxY: 10
+  timer: 2
 --- !u!50 &1135418721
 Rigidbody2D:
   serializedVersion: 4
@@ -9816,6 +9824,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297967322}
   m_CullTransparentMesh: 1
+--- !u!1 &1319273782
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1319273783}
+  m_Layer: 0
+  m_Name: CatchingManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1319273783
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319273782}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.22150612, y: 0.25134444, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1330357184
 GameObject:
   m_ObjectHideFlags: 0
@@ -11346,6 +11385,7 @@ MonoBehaviour:
   - {fileID: 902426248}
   selectedIngredient: {fileID: 0}
   ingredientSpawnPoint: {fileID: 1005341341}
+  poof: {fileID: 0}
   ingredientPrefabs:
   - {fileID: 2293857493260216522, guid: dea90a6d3e173e4418d13340814de6a0, type: 3}
   - {fileID: 3210495018452311271, guid: 600e0ee5253ea9d43920c80af0cfe83c, type: 3}

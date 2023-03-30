@@ -31,6 +31,7 @@ namespace Core
             // You might wanna check if the ingredient instance is already in the list, and return out if it is
             if(collision.TryGetComponent<Ingredient>(out Ingredient ingredient))
             {
+                collision.transform.parent = this.transform;
                 GameEvents.OnIngredientEnterCauldron?.Invoke(collision.GetComponent<Ingredient>());
                 containedIngredients.Add(ingredient);
                 // invoke event, and send contained ingredients to potion manager. event thats expecting a list of ingredients.
