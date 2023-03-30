@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sleep Potion
   m_EditorClassIdentifier: 
   potionName: Sleep Potion
-  sprite: {fileID: 21300000, guid: 02bff1f1b5edede4a85d02946f65d414, type: 3}
+  sprite: {fileID: 21300000, guid: 8e5061b6bca2d3d4d987c3081e85a036, type: 3}
   recipe:
   - {fileID: 11400000, guid: 125bfed8f059b9b4b8c457f8f3167172, type: 2}
   - {fileID: 11400000, guid: c83694c5255d3d44cac24da6009f7d28, type: 2}

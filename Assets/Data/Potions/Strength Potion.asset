@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Strength Potion
   m_EditorClassIdentifier: 
   potionName: Strength Potion
-  sprite: {fileID: 21300000, guid: 1398fbbb6a41d0f46b208dfc4f279c67, type: 3}
+  sprite: {fileID: 21300000, guid: b11d3bc791fe82041b7ff6afc504096f, type: 3}
   recipe:
   - {fileID: 11400000, guid: 569fbe8c72047964eafb1f41d33065dd, type: 2}
   - {fileID: 11400000, guid: 125bfed8f059b9b4b8c457f8f3167172, type: 2}
