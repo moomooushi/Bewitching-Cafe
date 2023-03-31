@@ -16,11 +16,11 @@ public class CleanUp : MonoBehaviour
         {
             Destroy(ingredient);
         }
-        //GameObject[] butterflies = GameObject.FindGameObjectsWithTag("Butterfly");
-        //foreach (GameObject butterfly in butterflies)
-        //{
-        //    Destroy(butterfly);
-        //}
+        GameObject[] butterflies = GameObject.FindGameObjectsWithTag("Catchables");
+        foreach (GameObject butterfly in butterflies)
+        {
+            Destroy(butterfly);
+        }
         //GameObject[] potions = GameObject.FindGameObjectsWithTag("Potion");
         //if (where == "Mine")
         //{
