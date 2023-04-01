@@ -6,24 +6,34 @@ public class ShopSigilFade : MonoBehaviour
 {
     public CanvasGroup canvasGroup;
     private bool lightUp;
+    private float timer;
+
+    private void Start()
+    {
+        timer = Random.Range(0, 6); 
+    }
 
     void Update()
     {
-        if (canvasGroup.alpha == 0)
+        timer -= 1 * Time.deltaTime;
+        if (timer < 0)
         {
-            lightUp = true;
-        }
-        if (canvasGroup.alpha == 1)
-        {
-            lightUp = false;
-        }
-        if (lightUp == true)
-        {
-            canvasGroup.alpha += 0.3f * Time.deltaTime;
-        }
-        else if (lightUp == false)
-        {
-            canvasGroup.alpha -= 0.4f * Time.deltaTime;
+            if (canvasGroup.alpha == 0)
+            {
+                lightUp = true;
+            }
+            if (canvasGroup.alpha == 1)
+            {
+                lightUp = false;
+            }
+            if (lightUp == true)
+            {
+                canvasGroup.alpha += 0.3f * Time.deltaTime;
+            }
+            else if (lightUp == false)
+            {
+                canvasGroup.alpha -= 0.4f * Time.deltaTime;
+            }
         }
     }
 }
