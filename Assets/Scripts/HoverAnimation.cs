@@ -16,7 +16,7 @@ public class HoverAnimation : MonoBehaviour
 
 
     void OnMouseEnter()
-    {
+    {//sparklesmanager make script like miningmanager
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 100, sparkleLayers);
         if (hit)
         {
