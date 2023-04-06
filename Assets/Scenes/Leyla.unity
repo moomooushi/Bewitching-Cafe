@@ -5745,6 +5745,8 @@ MonoBehaviour:
   - {fileID: 474881078}
   unlockNotif: {fileID: 1401399266}
   unlockAudio: {fileID: 43565585}
+  unlockParticle: {fileID: 1652143759095011289, guid: e2c1ac940434a5242b54d72b66654687, type: 3}
+  animationFadeOutTime: 0
 --- !u!82 &43565585
 AudioSource:
   m_ObjectHideFlags: 0
@@ -54881,6 +54883,7 @@ MonoBehaviour:
   ingredientPrefabs: []
   envelopeButton: {fileID: 43565578}
   moneyCounter: {fileID: 1589386951}
+  cooldownTime: 1
 --- !u!1 &1160990972
 GameObject:
   m_ObjectHideFlags: 0
@@ -72988,7 +72991,7 @@ RectTransform:
   m_GameObject: {fileID: 1401399266}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4243, y: 1.4243, z: 1.4243}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 820602628}
@@ -72999,7 +73002,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -30}
+  m_AnchoredPosition: {x: 0, y: -36.3}
   m_SizeDelta: {x: 164.1, y: 47}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1401399268
@@ -86078,6 +86081,7 @@ MonoBehaviour:
   - {fileID: 4478850175701591466, guid: ba5d555316f4cdd4a8db75f68100519d, type: 3}
   envelopeButton: {fileID: 43565578}
   moneyCounter: {fileID: 1589386951}
+  cooldownTime: 1
 --- !u!4 &1706340432 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4610197504323815633, guid: 072cd5d57fab4ba49b00ec1869870276, type: 3}

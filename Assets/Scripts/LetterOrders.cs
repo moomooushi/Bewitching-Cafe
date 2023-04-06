@@ -5,10 +5,13 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System;
+using DG.Tweening;
 //using Random = System.Random;
 
 public class LetterOrders : MonoBehaviour
 {
+    private SpriteRenderer sr;
+    
     public string[] potionTypes;
     public string[] potionCustomers;
     public GameObject letterText;
@@ -37,6 +40,8 @@ public class LetterOrders : MonoBehaviour
     [SerializeField] GameObject[] realRecipes;
     [SerializeField] GameObject unlockNotif;
     [SerializeField] AudioSource unlockAudio;
+    [SerializeField] GameObject unlockParticle;
+    [SerializeField] float animationFadeOutTime;
     
     void Start()
     {
@@ -47,6 +52,8 @@ public class LetterOrders : MonoBehaviour
         amountCount = 0;
         maxPotionTypes = 3;
         NewOrder();
+
+        sr = GetComponent<SpriteRenderer>();
     }
 
     public void ConfirmOrder()
@@ -109,6 +116,9 @@ public class LetterOrders : MonoBehaviour
                 unlockNotif.GetComponentInChildren<TextMeshProUGUI>().text = "You unlocked Energy Potion";
                 mysteryRecipes[0].SetActive(false);
                 realRecipes[0].SetActive(true);
+                // Instantiate(unlockParticle, unlockNotif.transform.position, Quaternion.identity);
+                // unlockNotif.transform.DOScale(Vector3.zero, animationFadeOutTime); // Vector3 for where particle will spawn
+                // sr.DOFade(0, animationFadeOutTime); // fade after sometime
                 unlockAudio.Play();
             }
             if (orderCounter.GetComponent<TextMeshProUGUI>().text == "6 Orders Completed")
@@ -118,6 +128,7 @@ public class LetterOrders : MonoBehaviour
                 unlockNotif.SetActive(true);
                 unlockNotif.GetComponentInChildren<TextMeshProUGUI>().text = "You unlocked Strength Potion";
                 realRecipes[1].SetActive(true);
+                
                 unlockAudio.Play();
             }
             if (orderCounter.GetComponent<TextMeshProUGUI>().text == "9 Orders Completed")
@@ -127,6 +138,7 @@ public class LetterOrders : MonoBehaviour
                 unlockNotif.SetActive(true);
                 unlockNotif.GetComponentInChildren<TextMeshProUGUI>().text = "You unlocked Sleep Potion";
                 realRecipes[2].SetActive(true);
+                
                 unlockAudio.Play();
             }
         }

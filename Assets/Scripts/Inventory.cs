@@ -22,43 +22,52 @@ public class Inventory : MonoBehaviour
     private int cost;
     public GameObject moneyCounter;
 
+    public float cooldownTime = 1f;
+    private bool ingredientPressed = false;
+
     //This function is checking if there's enough of the ingredient. If there is, remove from amount - (which is child of label - (which is child of ingredient))
     public void PickIngredient(string ingredientName)//ensure the button has the name of the ingredient its attached to.
     {
-        foreach (GameObject ingredient in ingredients)//grabbing the gameobject based off its name so I dont have to attach a script to each ingredient
+        if (!ingredientPressed)
         {
-            //print(ingredientName + ingredient.name);
-            if (ingredientName == ingredient.name)
+            foreach (GameObject ingredient in ingredients)//grabbing the gameobject based off its name so I dont have to attach a script to each ingredient
             {
-                selectedIngredient = ingredient;
-            }
-        }
-        
-        GameObject label = selectedIngredient.transform.GetChild(0).gameObject;
-        GameObject amount = label.transform.GetChild(0).gameObject;
-        int.TryParse(amount.GetComponent<TextMeshProUGUI>().text, out int number);
-        
-        if (number > 0)//if the ingredient is available
-        {
-            print("taking 1 " + ingredientName);
-            number -= 1;
-            amount.GetComponent<TextMeshProUGUI>().text = number.ToString();
-
-            foreach (GameObject prefab in ingredientPrefabs)
-            {
-                if (selectedIngredient.name == prefab.name)
+                //print(ingredientName + ingredient.name);
+                if (ingredientName == ingredient.name)
                 {
-                    Instantiate(prefab, ingredientSpawnPoint.transform.position, transform.rotation);
+                    selectedIngredient = ingredient;
                 }
             }
+        
+            GameObject label = selectedIngredient.transform.GetChild(0).gameObject;
+            GameObject amount = label.transform.GetChild(0).gameObject;
+            int.TryParse(amount.GetComponent<TextMeshProUGUI>().text, out int number);
+        
+            if (number > 0)//if the ingredient is available
+            {
+                print("taking 1 " + ingredientName);
+                number -= 1;
+                amount.GetComponent<TextMeshProUGUI>().text = number.ToString();
 
-        }
-        if (number == 0)
-        {
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Instantiate(poof, new Vector3(mousePos.x, mousePos.y, 0), Quaternion.identity);
-            print("youre out of " + ingredientName);
-            selectedIngredient.GetComponent<Image>().enabled = false;   
+                foreach (GameObject prefab in ingredientPrefabs)
+                {
+                    if (selectedIngredient.name == prefab.name)
+                    {
+                        Instantiate(prefab, ingredientSpawnPoint.transform.position, transform.rotation);
+                        ingredientPressed = true;
+                    }
+                }
+
+            }
+            if (number == 0)
+            {
+                Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Instantiate(poof, new Vector3(mousePos.x, mousePos.y, 0), Quaternion.identity);
+                print("youre out of " + ingredientName);
+                selectedIngredient.GetComponent<Image>().enabled = false;   
+            }
+
+            StartCoroutine(MakeIngredientClickable());
         }
     }
     private void Update()
@@ -118,7 +127,7 @@ public class Inventory : MonoBehaviour
         int.TryParse(amount.GetComponent<TextMeshProUGUI>().text, out int number);
         print(envelopeButton.GetComponent<LetterOrders>().money + " > " + cost);
 
-        if (envelopeButton.GetComponent<LetterOrders>().money > cost)//if the ingredient is available
+        if (envelopeButton.GetComponent<LetterOrders>().money >= cost)//if the ingredient is available
         {
             print("buying 1 " + ingredientName);
             number += 1;
@@ -126,5 +135,11 @@ public class Inventory : MonoBehaviour
             amount.GetComponent<TextMeshProUGUI>().text = number.ToString();
             moneyCounter.GetComponent<TextMeshProUGUI>().text = "$" + envelopeButton.GetComponent<LetterOrders>().money;
         }
+    }
+
+    IEnumerator MakeIngredientClickable()
+    {
+        yield return new WaitForSeconds(.75f);
+        ingredientPressed = false;
     }
 }
