@@ -303,8 +303,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1508711631}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -315,8 +315,8 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1510678472}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -327,8 +327,8 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1618790577}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -339,7 +339,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 338137433}
         m_TargetAssemblyTypeName: CleanUp, Assembly-CSharp
-        m_MethodName: CleanUpMess
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -351,7 +351,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1064401328}
         m_TargetAssemblyTypeName: MiningManager, Assembly-CSharp
-        m_MethodName: GenerateRocks
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5759,7 +5759,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b545278b0640d484b8ae13d2e891458f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.497
+  m_Volume: 0.691
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -25182,7 +25182,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &210191853
 RectTransform:
   m_ObjectHideFlags: 0
