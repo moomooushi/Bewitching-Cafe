@@ -51,7 +51,9 @@ public class LetterOrders : MonoBehaviour
         }
         amountCount = 0;
         maxPotionTypes = 3;
-        NewOrder();
+
+        potion = "Healing Potion";
+        amount = 1;
 
         sr = GetComponent<SpriteRenderer>();
     }
