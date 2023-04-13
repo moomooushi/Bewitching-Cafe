@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6725583653644023246}
+  - component: {fileID: -986848161524460345}
   m_Layer: 0
   m_Name: Plant Item
   m_TagString: Untagged
@@ -37,6 +38,24 @@ RectTransform:
   m_AnchoredPosition: {x: 844, y: 221}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &-986848161524460345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6725583653644023247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbdae5ff360f00449906f2668d8de819, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  plant: {fileID: 0}
+  nameTxt: {fileID: 0}
+  priceTxt: {fileID: 0}
+  icon: {fileID: 0}
+  btnImage: {fileID: 0}
+  btnText: {fileID: 0}
 --- !u!1 &6725583653882633999
 GameObject:
   m_ObjectHideFlags: 0
