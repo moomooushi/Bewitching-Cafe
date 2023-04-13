@@ -61307,9 +61307,6 @@ MonoBehaviour:
   - message: 'CAT: You can find more ingredients in our little scavenging area!'
     visibleDuration: 4
     soundEffect: {fileID: 8300000, guid: ebd9297bec2f2e4458644da57021370f, type: 3}
-  - message: 'CAT: Be sure to stand over the plants and press ''E'' on your keyboard.'
-    visibleDuration: 4
-    soundEffect: {fileID: 8300000, guid: ebd9297bec2f2e4458644da57021370f, type: 3}
   - message: 'CAT: Happy brewing!'
     visibleDuration: 4
     soundEffect: {fileID: 8300000, guid: ebd9297bec2f2e4458644da57021370f, type: 3}
@@ -61447,7 +61444,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1215140041
 RectTransform:
   m_ObjectHideFlags: 0
@@ -62403,6 +62400,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1510678472}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1243439140
 MonoBehaviour:
@@ -78508,7 +78517,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1510678473
 RectTransform:
   m_ObjectHideFlags: 0
