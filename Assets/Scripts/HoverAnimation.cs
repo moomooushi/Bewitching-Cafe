@@ -21,7 +21,7 @@ public class HoverAnimation : MonoBehaviour
         if (hit)
         {
             scaleUp = true;
-            sparkleAudio.Play();
+            //sparkleAudio.Play();
             transform.GetChild(0).gameObject.SetActive(true);
             hasStarted = true;
         }
@@ -29,7 +29,7 @@ public class HoverAnimation : MonoBehaviour
         {
             print("Barrier");
             scaleUp = true;
-            sparkleAudio.Play();
+            //sparkleAudio.Play();
             transform.GetChild(0).gameObject.SetActive(true);
             hasStarted = true;
         }
@@ -42,7 +42,7 @@ public class HoverAnimation : MonoBehaviour
         }
         else
         {
-            sparkleAudio.Stop();
+            //sparkleAudio.Stop();
             transform.GetChild(0).gameObject.SetActive(false);
             scaleUp = false;
         }

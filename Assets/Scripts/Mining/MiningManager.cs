@@ -37,7 +37,8 @@ public class MiningManager : MonoBehaviour
             if (hit && hit.transform.name.Contains("Rock"))
             {
                 Instantiate(brokenRocks, new Vector3(hit.transform.position.x, hit.transform.position.y, 0), Quaternion.identity);
-                Instantiate(poof, new Vector3(hit.transform.position.x, hit.transform.position.y, 0), Quaternion.identity);
+                Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Instantiate(poof, new Vector3(mousePos.x, mousePos.y, 0), Quaternion.identity);
                 Destroy(hit.transform.gameObject);
                 miningAudioSource[0].Play();
             }

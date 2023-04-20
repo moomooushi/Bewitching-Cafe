@@ -6,10 +6,13 @@ using Ingredients;
 using ScriptableObjects.Ingredients;
 //using UnityEngine.UIElements;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 
 public class Inventory : MonoBehaviour
 {
     public GameObject[] ingredients;
+    public Sprite[] presentIngredients;
+    public Sprite[] missingIngredients;
     public GameObject selectedIngredient;
     public GameObject ingredientSpawnPoint;
     public GameObject poof;
@@ -61,10 +64,16 @@ public class Inventory : MonoBehaviour
             }
             if (number == 0)
             {
+                foreach (Sprite missingIgredient in missingIngredients)
+                {
+                    if (missingIgredient.name.Contains(selectedIngredient.name))
+                    {
+                        selectedIngredient.GetComponent<Image>().sprite = missingIgredient;
+                    }
+                }
                 Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 Instantiate(poof, new Vector3(mousePos.x, mousePos.y, 0), Quaternion.identity);
                 print("youre out of " + ingredientName);
-                selectedIngredient.GetComponent<Image>().enabled = false;   
             }
 
             StartCoroutine(MakeIngredientClickable());
@@ -79,7 +88,13 @@ public class Inventory : MonoBehaviour
             int.TryParse(amount.GetComponent<TextMeshProUGUI>().text, out int number);
             if (number > 0)
             {
-                ingredient.GetComponent<Image>().enabled = true;
+                foreach (Sprite presentIgredient in presentIngredients)
+                {
+                    if (presentIgredient.name.Contains(ingredient.name))
+                    {
+                        ingredient.GetComponent<Image>().sprite = presentIgredient;
+                    }
+                }
             }
         }
     }
@@ -95,6 +110,13 @@ public class Inventory : MonoBehaviour
                 int.TryParse(amount.GetComponent<TextMeshProUGUI>().text, out int number);
                 number += 1;
                 amount.GetComponent<TextMeshProUGUI>().text = number.ToString();
+                foreach (Sprite presentIgredient in presentIngredients)
+                {
+                    if (presentIgredient.name.Contains(ingredient.name))
+                    {
+                        ingredient.GetComponent<Image>().sprite = presentIgredient;
+                    }
+                }
             }
         }
     }
