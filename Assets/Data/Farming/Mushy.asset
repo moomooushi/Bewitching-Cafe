@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9deb31c292768ef45907da4457c269c3, type: 3}
-  m_Name: Mandrake
+  m_Name: Mushy
   m_EditorClassIdentifier: 
-  plantName: Mandrake
+  plantName: Mushy
   plantStages:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  timeBtwStages: 4
-  buyPrice: 125
-  icon: {fileID: 21300000, guid: 8dc563cd25c98d8498ca5aff1fa9b2ea, type: 3}
+  timeBtwStages: 2
+  buyPrice: 100
+  icon: {fileID: 21300000, guid: 4a7c1fda5b8944d439383d68c5a0a683, type: 3}

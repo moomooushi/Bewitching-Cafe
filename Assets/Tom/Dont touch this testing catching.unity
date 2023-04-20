@@ -5675,6 +5675,8 @@ MonoBehaviour:
   - {fileID: 474881078}
   unlockNotif: {fileID: 1401399266}
   unlockAudio: {fileID: 43565585}
+  unlockParticle: {fileID: 0}
+  animationFadeOutTime: 0
 --- !u!82 &43565585
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5985,6 +5987,9 @@ MonoBehaviour:
   rate: 0
   hasStarted: 0
   maxSize: 0
+  sparkleLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!212 &51077089
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13030,6 +13035,9 @@ MonoBehaviour:
   rate: 0
   hasStarted: 0
   maxSize: 0
+  sparkleLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!212 &147648554
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20060,7 +20068,7 @@ Rigidbody2D:
   m_Constraints: 4
 --- !u!95 &263201898
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -20077,7 +20085,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!212 &263201899
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20200,6 +20208,9 @@ MonoBehaviour:
   rate: 0
   hasStarted: 0
   maxSize: 0
+  sparkleLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!58 &263500586
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -30432,6 +30443,9 @@ MonoBehaviour:
   rate: 0
   hasStarted: 0
   maxSize: 0
+  sparkleLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!58 &360855706
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -31164,6 +31178,9 @@ MonoBehaviour:
   rate: 0
   hasStarted: 0
   maxSize: 0
+  sparkleLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!212 &446717048
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -37971,6 +37988,9 @@ MonoBehaviour:
   rate: 0
   hasStarted: 0
   maxSize: 0
+  sparkleLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!58 &894278015
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -39229,6 +39249,9 @@ MonoBehaviour:
   rate: 2
   hasStarted: 0
   maxSize: 0
+  sparkleLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!61 &929723808
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -46726,6 +46749,7 @@ MonoBehaviour:
   ingredientPrefabs: []
   envelopeButton: {fileID: 43565578}
   moneyCounter: {fileID: 1589386951}
+  cooldownTime: 1
 --- !u!1 &1160990972
 GameObject:
   m_ObjectHideFlags: 0
@@ -53649,6 +53673,9 @@ MonoBehaviour:
   rate: 0
   hasStarted: 0
   maxSize: 0
+  sparkleLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!58 &1244442970
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -59377,6 +59404,9 @@ MonoBehaviour:
   rate: 0
   hasStarted: 0
   maxSize: 0
+  sparkleLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!58 &1324252832
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -64649,6 +64679,9 @@ MonoBehaviour:
   rate: 0
   hasStarted: 0
   maxSize: 0
+  sparkleLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!58 &1381663586
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -72104,6 +72137,9 @@ MonoBehaviour:
   rate: 0
   hasStarted: 0
   maxSize: 0
+  sparkleLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!58 &1654244358
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -72226,6 +72262,9 @@ MonoBehaviour:
   rate: 0
   hasStarted: 0
   maxSize: 0
+  sparkleLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!58 &1660618528
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -77542,6 +77581,7 @@ MonoBehaviour:
   - {fileID: 4478850175701591466, guid: ba5d555316f4cdd4a8db75f68100519d, type: 3}
   envelopeButton: {fileID: 43565578}
   moneyCounter: {fileID: 1589386951}
+  cooldownTime: 1
 --- !u!1 &1705387634
 GameObject:
   m_ObjectHideFlags: 0
@@ -96838,6 +96878,9 @@ MonoBehaviour:
   rate: 0
   hasStarted: 0
   maxSize: 0
+  sparkleLayers:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!58 &2057349060
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -97586,7 +97629,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2091104437}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -358.72073, y: -431.70248, z: 0}
+  m_LocalPosition: {x: -358.72073, y: -431.59, z: 0}
   m_LocalScale: {x: 18.0383, y: 1.015137, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

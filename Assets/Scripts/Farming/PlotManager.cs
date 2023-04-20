@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class PlotManager : MonoBehaviour
 {
@@ -21,14 +20,6 @@ public class PlotManager : MonoBehaviour
     PlantObject selectedPlant;
 
     FarmManager fm;
-
-    [SerializeField] GameObject inventoryManager;
-    public int mandrakeSeedsLeft;
-    public int mushySeedsLeft;
-    public int blueberrySeedsLeft;
-    [SerializeField] TextMeshProUGUI mandrakeSeedsLeftTxt;
-    [SerializeField] TextMeshProUGUI mushySeedsLeftTxt;
-    [SerializeField] TextMeshProUGUI blueberrySeedsLeftTxt;
 
     // Start is called before the first frame update
     void Start()
@@ -52,10 +43,6 @@ public class PlotManager : MonoBehaviour
                 UpdatePlant();
             }
         }
-
-        mandrakeSeedsLeftTxt.SetText("$" + mandrakeSeedsLeft);
-        mushySeedsLeftTxt.SetText("$" + mushySeedsLeft);
-        blueberrySeedsLeftTxt.SetText("$" + blueberrySeedsLeft);
     }
 
     private void OnMouseDown()
@@ -68,20 +55,9 @@ public class PlotManager : MonoBehaviour
                 Harvest();
             }
         }
-        else if(fm.isPlanting && selectedPlant.plantName == "Mandrake" && mandrakeSeedsLeft > 0)
+        else if(fm.isPlanting && fm.selectPlant.plant.buyPrice <= fm.money)
         {
             Plant(fm.selectPlant.plant);
-            mandrakeSeedsLeft--;
-        }
-        else if (fm.isPlanting && selectedPlant.plantName == "Blueberry" && blueberrySeedsLeft > 0)
-        {
-            Plant(fm.selectPlant.plant);
-            mandrakeSeedsLeft--;
-        }
-        else if (fm.isPlanting && selectedPlant.plantName == "Mushy" && mushySeedsLeft > 0)
-        {
-            Plant(fm.selectPlant.plant);
-            mandrakeSeedsLeft--;
         }
     }
 
@@ -89,7 +65,7 @@ public class PlotManager : MonoBehaviour
     {
         if (fm.isPlanting)
         {
-            if(isPlanted || mandrakeSeedsLeft >= 0)
+            if(isPlanted || fm.selectPlant.plant.buyPrice > fm.money)
             {
                 //Can't buy
                 plot.color = unavailableColor;
@@ -112,10 +88,7 @@ public class PlotManager : MonoBehaviour
         Debug.Log("Harvested");
         isPlanted = false;
         plant.gameObject.SetActive(false);
-        if (plant.transform.name.Contains("Mandrake"))
-        {
-            inventoryManager.GetComponent<Inventory>().IncreaseIngredient("Mandrake");
-        }
+       
     }
 
     void Plant(PlantObject newPlant)
@@ -123,6 +96,8 @@ public class PlotManager : MonoBehaviour
         selectedPlant = newPlant;
         Debug.Log("Planted");
         isPlanted = true;
+
+        fm.Transaction(-selectedPlant.buyPrice);
 
         plantStage = 0;
         UpdatePlant();
