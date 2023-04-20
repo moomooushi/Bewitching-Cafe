@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plantName: Mushy
   plantStages:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 10871857b00e59346af6b980edcd5e3f, type: 3}
+  - {fileID: 21300000, guid: 66abbaeb398170c42ab5b03ead78dfc6, type: 3}
+  - {fileID: 21300000, guid: 58cccb68f7ed585469e9da5dffd6102e, type: 3}
+  - {fileID: 21300000, guid: 7dfa712c486a0f64cbb66084466c92e4, type: 3}
   timeBtwStages: 2
   buyPrice: 100
   icon: {fileID: 21300000, guid: 4a7c1fda5b8944d439383d68c5a0a683, type: 3}

@@ -20,6 +20,10 @@ public class PlotManager : MonoBehaviour
     PlantObject selectedPlant;
 
     FarmManager fm;
+    LetterOrders letterOrders;
+    public GameObject inventoryManager;
+    public AudioSource harvestSound;
+    public LayerMask harvestLayers;
 
     // Start is called before the first frame update
     void Start()
@@ -52,10 +56,31 @@ public class PlotManager : MonoBehaviour
             //We want to harvest if crop is planted
             if(plantStage == selectedPlant.plantStages.Length - 1 && !fm.isPlanting)
             {
+                RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 100, harvestLayers);
+                if (hit && hit.transform.name.Contains("Blueberry"))
+                {
+                    print("you found a blueberry!");
+                    inventoryManager.GetComponent<Inventory>().IncreaseIngredient("Blueberry");
+                    harvestSound.Play();
+                }
+                else if (hit && hit.transform.name.Contains("Mushy"))
+                {
+                    print("you found a Mushy!");
+                    inventoryManager.GetComponent<Inventory>().IncreaseIngredient("Mushy");
+                    harvestSound.Play();
+
+                }
+                else if (hit && hit.transform.name.Contains("Mandrake"))
+                {
+                    print("you found a Mandrake!");
+                    inventoryManager.GetComponent<Inventory>().IncreaseIngredient("Mandrake");
+                    harvestSound.Play();
+                }
                 Harvest();
+
             }
         }
-        else if(fm.isPlanting && fm.selectPlant.plant.buyPrice <= fm.money)
+        else if(fm.isPlanting && fm.selectPlant.plant.buyPrice <= fm.fmMoney)
         {
             Plant(fm.selectPlant.plant);
         }
@@ -65,7 +90,7 @@ public class PlotManager : MonoBehaviour
     {
         if (fm.isPlanting)
         {
-            if(isPlanted || fm.selectPlant.plant.buyPrice > fm.money)
+            if(isPlanted || fm.selectPlant.plant.buyPrice > fm.fmMoney)
             {
                 //Can't buy
                 plot.color = unavailableColor;
@@ -97,6 +122,7 @@ public class PlotManager : MonoBehaviour
         Debug.Log("Planted");
         isPlanted = true;
 
+        //fm.fmMoney = fm.fmMoney - selectedPlant.buyPrice;
         fm.Transaction(-selectedPlant.buyPrice);
 
         plantStage = 0;

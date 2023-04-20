@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plantName: Blueberry
   plantStages:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: d42f27e0352cb1c448402a0f716d0569, type: 3}
+  - {fileID: 21300000, guid: db7214b17b241a0459a476913fbfaa3d, type: 3}
+  - {fileID: 21300000, guid: b1ae8295e42f7ca42b4a6e89ea452f0e, type: 3}
+  - {fileID: 21300000, guid: c270329975a696d48bba53c6bad7b3e1, type: 3}
   timeBtwStages: 1
   buyPrice: 75
   icon: {fileID: 21300000, guid: cf05a9d26ca43774d8519d33275d2cc6, type: 3}
