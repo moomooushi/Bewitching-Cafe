@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 public class PlantItem : MonoBehaviour
 {
     public PlantObject plant;
 
-    public TextMeshProUGUI seedsLeftTxt;
+    public Text nameTxt;
+    public Text priceTxt;
+    public Image icon;
 
     public Image btnImage;
-    public TextMeshProUGUI btnText;
+    public Text btnText;
 
     FarmManager fm;
 
@@ -19,6 +20,7 @@ public class PlantItem : MonoBehaviour
     void Start()
     {
         fm = FindObjectOfType<FarmManager>();
+        InitializeUI();
     }
 
     public void BuyPlant()
@@ -27,4 +29,10 @@ public class PlantItem : MonoBehaviour
         fm.SelectPlant(this);
     }
 
+    void InitializeUI()
+    {
+        nameTxt.text = plant.plantName;
+        priceTxt.text = "$" + plant.buyPrice;
+        icon.sprite = plant.icon;
+    }
 }

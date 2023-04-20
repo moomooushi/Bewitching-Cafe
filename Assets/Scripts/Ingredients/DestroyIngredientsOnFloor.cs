@@ -1,15 +1,22 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Ingredients
 {
     public class DestroyIngredientsOnFloor : MonoBehaviour
     {
-        private void OnTriggerEnter2D(Collider2D col)
+        public List<GameObject> itemsOnGround = new List<GameObject>(); 
+        private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (col.gameObject.CompareTag("Ingredients"))
+            if (collision.gameObject)
             {
-                Destroy(col.gameObject);
+                itemsOnGround.Add(collision.gameObject);
+            }
+
+            foreach (GameObject items in itemsOnGround)
+            {
+                items.layer = LayerMask.NameToLayer("Catchable");
             }
         }
     }
