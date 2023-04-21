@@ -22,10 +22,22 @@ public class RandomMovement : MonoBehaviour
 
     private float nextActionTime = 0.0f;
 
+    Rigidbody2D rb;
+
+    SpriteRenderer _spriteRenderer;
+
     // Start is called before the first frame update
     void Start()
     {
         movementAreaCollider = GetComponentInParent<Collider2D>();
+        rb = GetComponent<Rigidbody2D>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+    }
+
+    private void Update()
+    {
+        if (rb.velocity.x > 0) _spriteRenderer.flipX = false;
+        else _spriteRenderer.flipX = true;
     }
 
     // Update is called once per frame
@@ -41,8 +53,10 @@ public class RandomMovement : MonoBehaviour
 
         // calculate direction and set velocity
         Vector2 direction = (targetPosition - (Vector2)transform.position).normalized;
-        GetComponent<Rigidbody2D>().velocity = direction * speed * Time.deltaTime;
+        rb.velocity = direction * speed * Time.deltaTime;
         }
+
+        
     }
 
     private void OnCollisionEnter2D(Collision2D col)
@@ -54,5 +68,10 @@ public class RandomMovement : MonoBehaviour
         }
         // otherwise, stop moving
         GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+    }
+
+    void Flip()
+    {
+
     }
 }
