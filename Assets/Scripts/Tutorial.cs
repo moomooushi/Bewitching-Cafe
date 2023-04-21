@@ -176,5 +176,6 @@ public class Tutorial : MonoBehaviour
     public void SkipTutorial()
     {
         stage = 50;
+        orderCompleteButton.SetActive(true);
     }
 }
