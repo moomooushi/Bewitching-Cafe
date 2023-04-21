@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpriteButton : MonoBehaviour
 {
     [SerializeField] GameObject panel;
+    [SerializeField] GameObject generalManager;
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -13,6 +14,7 @@ public class SpriteButton : MonoBehaviour
             if (hit && hit.transform.name.Contains(gameObject.name))
             {
                 panel.SetActive(true);
+                generalManager.GetComponent<Tutorial>().NextStage();
             }
         }
     }

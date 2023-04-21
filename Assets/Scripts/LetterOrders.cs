@@ -146,7 +146,7 @@ public class LetterOrders : MonoBehaviour
         }
         else if (amount != amountCount)
         {
-            letterText.GetComponent<TextMeshProUGUI>().text = "Hello Witch Cat,\n\nI Need:\n<u><b><color=#EA2E00>" + amount + " " + potion + "</color></b></u>\n\nThank you,\n" + potionCustomer;
+            letterText.GetComponent<TextMeshProUGUI>().text = "Hello Witch Kat,\n\nI Need:\n<u><b><color=#EA2E00>" + amount + " " + potion + "</color></b></u>\n\nThank you,\n" + potionCustomer;
             wrongOrder.SetActive(true);
             money -= 50;
             moneyCounter.GetComponent<TextMeshProUGUI>().text = "$" + money;
@@ -158,6 +158,6 @@ public class LetterOrders : MonoBehaviour
         amount = UnityEngine.Random.Range(1, 3);
         potion = potionTypes[UnityEngine.Random.Range(0, maxPotionTypes)];
         potionCustomer = potionCustomers[UnityEngine.Random.Range(0,maxCustomers)];
-        letterText.GetComponent<TextMeshProUGUI>().text = "Hello Witch Cat,\n\nI Need:\n<u>" + amount + " "+ potion + "</u>\n\nThank you,\n" + potionCustomer;
+        letterText.GetComponent<TextMeshProUGUI>().text = "Hello Witch Kat,\n\nI Need:\n<u>" + amount + " "+ potion + "</u>\n\nThank you,\n" + potionCustomer;
     }
 }

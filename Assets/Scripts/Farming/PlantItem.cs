@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,8 +26,17 @@ public class PlantItem : MonoBehaviour
 
     public void BuyPlant()
     {
-        Debug.Log("Bought" + plant.plantName);
-        fm.SelectPlant(this);
+        if (this.GetComponent<PlantItem>().btnText.text == "Buy")
+        {
+            Debug.Log("Bought" + plant.plantName);
+            fm.SelectPlant(this);
+        }
+        else
+        {
+            this.btnImage.color = fm.buyColor;
+            this.btnText.text = "Buy";
+        }
+        
     }
 
     void InitializeUI()

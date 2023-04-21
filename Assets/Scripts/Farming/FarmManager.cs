@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
 
 public class FarmManager : MonoBehaviour
 {
-    public PlantItem selectPlant;
+    public PlantItem plantItem;
+    public PlantObject plantObject;
     public bool isPlanting = false;
     LetterOrders letterOrders;
     public TextMeshProUGUI moneyTxt;
 
-    public GameObject inventoryManager;
     public GameObject envelopeButton;
     public int fmMoney;
 
@@ -32,24 +33,30 @@ public class FarmManager : MonoBehaviour
 
     public void SelectPlant(PlantItem newPlant)
     {
-        if(selectPlant == newPlant)
+        print(newPlant);
+        plantItem = newPlant;
+        print("SelectPlant"+ newPlant);
+        print(plantItem);
+        if(plantItem == newPlant)
         {
-            selectPlant.btnImage.color = buyColor;
-            selectPlant.btnText.text = "Buy";
-            selectPlant = null;
-            isPlanting = false;
+            plantItem.btnImage.color = buyColor;
+            plantItem.btnText.text = "Buy";
+            isPlanting = true;
+            plantItem = newPlant;
+            plantItem.btnImage.color = cancelColor;
+            plantItem.btnText.text = "Cancel";
+            //isPlanting = false;
         }
         else
         {
-            if(selectPlant != null)
+            print("elseplant");
+            if(plantItem != null)
             {
-                selectPlant.btnImage.color = buyColor;
-                selectPlant.btnText.text = "Buy";
+                print("plant null");
+                plantItem.btnImage.color = buyColor;
+                plantItem.btnText.text = "Buy";
             }
-            selectPlant = newPlant;
-            selectPlant.btnImage.color = cancelColor;
-            selectPlant.btnText.text = "Cancel";
-            isPlanting = true;
+            isPlanting = false;
         }
     }
 

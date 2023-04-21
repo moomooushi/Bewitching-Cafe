@@ -1,6 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
+using UnityEditor.Search;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class PlotManager : MonoBehaviour
 {
@@ -24,6 +29,12 @@ public class PlotManager : MonoBehaviour
     public GameObject inventoryManager;
     public AudioSource harvestSound;
     public LayerMask harvestLayers;
+
+    public GameObject envelopeButton;
+    public GameObject displayMoney;
+    public GameObject mainDisplayMoney;
+    public Color cancelColor = Color.red;
+
 
     // Start is called before the first frame update
     void Start()
@@ -80,9 +91,9 @@ public class PlotManager : MonoBehaviour
 
             }
         }
-        else if(fm.isPlanting && fm.selectPlant.plant.buyPrice <= fm.fmMoney)
+        else if(fm.isPlanting && fm.plantItem.plant.buyPrice <= fm.fmMoney)
         {
-            Plant(fm.selectPlant.plant);
+            Plant(fm.plantItem.plant);
         }
     }
 
@@ -90,7 +101,7 @@ public class PlotManager : MonoBehaviour
     {
         if (fm.isPlanting)
         {
-            if(isPlanted || fm.selectPlant.plant.buyPrice > fm.fmMoney)
+            if(isPlanted || fm.plantItem.plant.buyPrice > fm.fmMoney)
             {
                 //Can't buy
                 plot.color = unavailableColor;
@@ -113,7 +124,8 @@ public class PlotManager : MonoBehaviour
         Debug.Log("Harvested");
         isPlanted = false;
         plant.gameObject.SetActive(false);
-       
+        inventoryManager.GetComponent<Inventory>().IncreaseIngredient(plant.sprite.name);
+        print(plant.sprite.name);
     }
 
     void Plant(PlantObject newPlant)
@@ -123,12 +135,19 @@ public class PlotManager : MonoBehaviour
         isPlanted = true;
 
         //fm.fmMoney = fm.fmMoney - selectedPlant.buyPrice;
-        fm.Transaction(-selectedPlant.buyPrice);
+        //fm.Transaction(-selectedPlant.buyPrice);
 
         plantStage = 0;
         UpdatePlant();
         timer = selectedPlant.timeBtwStages;
         plant.gameObject.SetActive(true);
+        envelopeButton.GetComponent<LetterOrders>().money -= newPlant.buyPrice;
+        displayMoney.GetComponent<TextMeshProUGUI>().text = "$ " + envelopeButton.GetComponent<LetterOrders>().money.ToString();
+        mainDisplayMoney.GetComponent<TextMeshProUGUI>().text = "$ " + envelopeButton.GetComponent<LetterOrders>().money.ToString();
+        //plantItem = newPlant;
+        //newPlant.GetChild(3).gameObject.GetComponent<PlantItem>().btnImage.color = cancelColor;
+        fm.isPlanting = false;
+        newPlant = null;
     }
 
     void UpdatePlant()
