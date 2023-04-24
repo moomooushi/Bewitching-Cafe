@@ -15,6 +15,8 @@ public class CatchingManager : MonoBehaviour
         [SerializeField] private GameObject butterflies;
         [SerializeField] private GameObject toads;
         [SerializeField] private GameObject beetles;
+        [SerializeField] private GameObject catching;
+        
 
     // Start is called before the first frame update
     public void SpawnCatchables() {
@@ -37,7 +39,7 @@ public class CatchingManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && catching.activeSelf)
         {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 100, catchingLayers);
             if (hit && hit.transform.name.Contains("Toad"))
@@ -45,24 +47,42 @@ public class CatchingManager : MonoBehaviour
                 print("you found a Toad!");
                 inventoryManager.GetComponent<Inventory>().IncreaseIngredient("Toad");
                 catchingAudioSource[1].Play();
-                Destroy(hit.transform.gameObject);
+                Instantiate(poof, new Vector3(hit.transform.position.x, hit.transform.position.y, -3), Quaternion.identity);
+                StartCoroutine(CaughtCritter(.3f, hit.transform.gameObject, hit.transform.GetComponent<SpriteRenderer>()));
             }
             else if (hit && hit.transform.name.Contains("Toxic Butterfly"))
             {
                 print("you found a Toxic Butterfly!");
                 inventoryManager.GetComponent<Inventory>().IncreaseIngredient("Toxic Butterfly");
                 catchingAudioSource[1].Play();
-                Destroy(hit.transform.gameObject);
-
+                Instantiate(poof, new Vector3(hit.transform.position.x, hit.transform.position.y, -3), Quaternion.identity);
+                StartCoroutine(CaughtCritter(.3f, hit.transform.gameObject, hit.transform.GetComponent<SpriteRenderer>()));
             }
             else if (hit && hit.transform.name.Contains("Beetle"))
             {
                 print("you found a Beetle!");
                 inventoryManager.GetComponent<Inventory>().IncreaseIngredient("Beetle");
                 catchingAudioSource[1].Play();
-                Destroy(hit.transform.gameObject);
+                Instantiate(poof, new Vector3(hit.transform.position.x, hit.transform.position.y, -3), Quaternion.identity);
+                StartCoroutine(CaughtCritter(.3f, hit.transform.gameObject, hit.transform.GetComponent<SpriteRenderer>()));
             }
         }
 
+    }
+    
+    IEnumerator CaughtCritter(float duration, GameObject critterGO, SpriteRenderer _sr)
+    {
+        float progress = 0;
+        var color = _sr.color;
+        while (progress < 1)
+        {
+            progress += Time.deltaTime / duration;
+            var transparency = Color.Lerp(new Color(1,1,1,1), new Color(1,1,1,0), progress);
+            _sr.color = transparency;
+            Debug.Log(_sr.color.a);
+            // critterGO.GetComponent<SpriteRenderer>().color = color;
+            yield return null;
+        }
+        Destroy(critterGO);
     }
 }

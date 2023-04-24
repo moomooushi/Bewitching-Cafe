@@ -8,6 +8,8 @@ public class PickupIngredient : MonoBehaviour
     [SerializeField] GameObject poof;
     [SerializeField] LayerMask pickupLayer;
     [SerializeField] AudioSource pickupAudioSource;
+
+    [SerializeField] private GameObject catching;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +19,7 @@ public class PickupIngredient : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !catching.activeSelf)
         {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 100, pickupLayer);
             if (hit && hit.transform.name.Contains("Toad"))
