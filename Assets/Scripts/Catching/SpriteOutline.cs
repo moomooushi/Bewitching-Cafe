@@ -1,18 +1,31 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class SpriteOutline : MonoBehaviour
+public class SpriteOutline : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    // Start is called before the first frame update
-    void Start()
+    public CanvasGroup canvasGroup;
+    private bool hovered;
+    
+    // [SerializeField] private float timer;
+    // [SerializeField] private bool lit;
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        
+        canvasGroup.alpha = 1f;
+        print("Mouse hovered");
+        hovered = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnPointerExit(PointerEventData eventData)
     {
-        
+        canvasGroup.alpha = 0.2f;
+        print("Mouse unhovered");
+        hovered = false;
     }
+    
+    
 }
