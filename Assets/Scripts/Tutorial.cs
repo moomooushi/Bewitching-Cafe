@@ -10,6 +10,7 @@ public class Tutorial : MonoBehaviour
     [SerializeField] GameObject okay;
     [SerializeField] GameObject orderCompleteButton;
     public int stage;
+    public int shopStage;
     [SerializeField] bool healingMade;
 
     private void Update()
@@ -22,6 +23,7 @@ public class Tutorial : MonoBehaviour
             narrator.SetActive(true);
             narrator.GetComponentInChildren<TextMeshProUGUI>().text = "Hello! I'm Kat, a witch, and I've employed you to help me. I need your opposable thumbs to help me with my orders";//orders position Vector2(341.299988,179.899994)
             narrator.GetComponentInChildren<TextMeshProUGUI>().fontSize = 13;
+            okay.SetActive(true);
         }
         if (stage == 1)//introduce orders
         {
@@ -140,7 +142,6 @@ public class Tutorial : MonoBehaviour
             narrator.GetComponentInChildren<TextMeshProUGUI>().text = "Click on the door again";
             narrator.transform.localPosition = new Vector2(-114, 46);
             focusWindow.transform.localPosition = new Vector2(229, -105);
-            focusWindow.transform.localScale = new Vector2(1.7f, 1.7f);
             focusWindow.SetActive(true);
         }
         else if (stage == 18)//catching
@@ -158,57 +159,73 @@ public class Tutorial : MonoBehaviour
             focusWindow.SetActive(false);
             okay.SetActive(true);
         }
-        else if(stage == 20)
+        else if(stage == 21)
         {
             narrator.SetActive(true);
             narrator.GetComponentInChildren<TextMeshProUGUI>().text = "Click on the door again";
             narrator.transform.localPosition = new Vector2(-114, 46);
             focusWindow.transform.localPosition = new Vector2(229, -105);
-            focusWindow.transform.localScale = new Vector2(1.7f, 1.7f);
             focusWindow.SetActive(true);
         }
-        else if (stage == 21)//Farming
+        else if (stage == 22)//Farming
         {
             narrator.GetComponentInChildren<TextMeshProUGUI>().text = "Now let's go to the farm. Click Farm";
             narrator.transform.localPosition = new Vector2(-114, 46);
             narrator.GetComponentInChildren<TextMeshProUGUI>().fontSize = 18;
             focusWindow.SetActive(true);
         }
-        else if (stage == 22)//Farming info
+        else if (stage == 23)//Farming info
         {
             narrator.transform.localPosition = new Vector2(170, 40);
             narrator.GetComponentInChildren<TextMeshProUGUI>().text = "In the Farm you need to plant seeds or spores to grow them and harvest. Click the Buy button of the ingredient you want to grow";
             narrator.GetComponentInChildren<TextMeshProUGUI>().fontSize = 13;
             focusWindow.SetActive(false);
         }
-        else if (stage == 23)//Farming info
+        else if (stage == 24)//Farming info
         {
-            narrator.transform.localPosition = new Vector2(-280, -125);
-            narrator.GetComponentInChildren<TextMeshProUGUI>().text = "If you change your mind you can click Cancel. Now Click on one of the dirt mounds on the ground to plant. This costs money.";
-            narrator.GetComponentInChildren<TextMeshProUGUI>().fontSize = 13;
-        }
-        else if (stage == 25)//Farming info
-        {
-            narrator.transform.localPosition = new Vector2(-280, -125);
-            narrator.GetComponentInChildren<TextMeshProUGUI>().text = "When you click on the dirt mound the ingredient starts growing, click it once it's fully grown to harvest it. When you're done click <color=#00ffffff><b>back";
-            narrator.GetComponentInChildren<TextMeshProUGUI>().fontSize = 13;
-            focusWindow.SetActive(false);
-            okay.SetActive(true);
+            narrator.transform.localPosition = new Vector2(-280, 0);
+            narrator.GetComponentInChildren<TextMeshProUGUI>().text = "Now Click on one of the dirt mounds on the ground to plant. This costs money";
+            narrator.GetComponentInChildren<TextMeshProUGUI>().fontSize = 15;
         }
         else if (stage == 26)//Farming info
         {
-            narrator.transform.localPosition = new Vector2(-280, -125);
-            narrator.GetComponentInChildren<TextMeshProUGUI>().text = "Now lets talk about the shop";
-            narrator.GetComponentInChildren<TextMeshProUGUI>().fontSize = 13;
+            narrator.transform.localPosition = new Vector2(-280, 0);
+            narrator.GetComponentInChildren<TextMeshProUGUI>().text = "The ingredient will start growing, click it once it's fully grown to harvest it";
             focusWindow.SetActive(false);
             okay.SetActive(true);
         }
+        else if (stage == 27)//Farming info
+        {
+            narrator.GetComponentInChildren<TextMeshProUGUI>().text = "If you want to change what you're planting click Cancel then Buy of whatever you want to plant. When you're done click <color=#00ffffff><b>back";
+            narrator.GetComponentInChildren<TextMeshProUGUI>().fontSize = 13;
+            narrator.SetActive(true);
+            okay.SetActive(true);
+        }
+        if (shopStage == 1)//shop
+        {
+            narrator.transform.localPosition = new Vector2(-114, 7.5f);
+            narrator.GetComponentInChildren<TextMeshProUGUI>().text = "This is a sigil that when clicked, opens the <b><u>shop</u></b>. Under it is our <b><u>money";
+            narrator.GetComponentInChildren<TextMeshProUGUI>().fontSize = 17;
+            narrator.SetActive(true);
+            focusWindow.SetActive(true);
+            focusWindow.transform.localPosition = new Vector2(64, 105);
+            focusWindow.transform.localScale = new Vector2(1, 1);
+        }
+        else if (shopStage == 2)
+        {
+            narrator.GetComponentInChildren<TextMeshProUGUI>().text = "Here you buy or sell ingredients. You will only really need to come here if you're out of money and need to buy seeds";
+            narrator.GetComponentInChildren<TextMeshProUGUI>().fontSize = 14;
+            narrator.transform.localPosition = new Vector2(90, -30f);
+            okay.SetActive(true);
+            focusWindow.SetActive(false);
+        }
 
-        else if (stage == 50)//skip tutorial
+        else if (stage == 100)//skip tutorial
         {
             focusWindow.SetActive(false);
             narrator.SetActive(false);
             orderCompleteButton.SetActive(true);
+            shopStage = 100;
         }
 
     }
@@ -218,10 +235,15 @@ public class Tutorial : MonoBehaviour
         //if the selected button is the right name and stage number,
         stage++;
     }
+    public void NextShopStage()
+    {
+        //if the selected button is the right name and stage number,
+        shopStage++;
+    }
 
     public void SkipTutorial()
     {
-        stage = 50;
+        stage = 100;
         orderCompleteButton.SetActive(true);
     }
 }

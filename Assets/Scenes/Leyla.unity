@@ -5860,7 +5860,7 @@ MonoBehaviour:
   potionCustomer: 
   maxPotions: 0
   maxCustomers: 0
-  money: 0
+  money: 25
   ordersComplete: 0
   moneyCounter: {fileID: 1589386951}
   orderCounter: {fileID: 549541406}
@@ -13013,7 +13013,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &152505315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31200,6 +31200,7 @@ MonoBehaviour:
   okay: {fileID: 152505314}
   orderCompleteButton: {fileID: 176712783}
   stage: 0
+  shopStage: 0
   healingMade: 0
 --- !u!114 &338137435
 MonoBehaviour:
@@ -37096,7 +37097,7 @@ Transform:
   - {fileID: 1809092540}
   - {fileID: 257915760}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &388299679
 GameObject:
@@ -46712,6 +46713,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: CleanUp, Assembly-CSharp
         m_MethodName: CleanUpMess
         m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 338137434}
+        m_TargetAssemblyTypeName: Tutorial, Assembly-CSharp
+        m_MethodName: NextShopStage
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -77202,7 +77215,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1467403667
 GameObject:
@@ -81567,6 +81580,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 338137434}
+        m_TargetAssemblyTypeName: Tutorial, Assembly-CSharp
+        m_MethodName: NextShopStage
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
