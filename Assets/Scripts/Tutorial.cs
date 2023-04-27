@@ -158,6 +158,51 @@ public class Tutorial : MonoBehaviour
             focusWindow.SetActive(false);
             okay.SetActive(true);
         }
+        else if(stage == 20)
+        {
+            narrator.SetActive(true);
+            narrator.GetComponentInChildren<TextMeshProUGUI>().text = "Click on the door again";
+            narrator.transform.localPosition = new Vector2(-114, 46);
+            focusWindow.transform.localPosition = new Vector2(229, -105);
+            focusWindow.transform.localScale = new Vector2(1.7f, 1.7f);
+            focusWindow.SetActive(true);
+        }
+        else if (stage == 21)//Farming
+        {
+            narrator.GetComponentInChildren<TextMeshProUGUI>().text = "Now let's go to the farm. Click Farm";
+            narrator.transform.localPosition = new Vector2(-114, 46);
+            narrator.GetComponentInChildren<TextMeshProUGUI>().fontSize = 18;
+            focusWindow.SetActive(true);
+        }
+        else if (stage == 22)//Farming info
+        {
+            narrator.transform.localPosition = new Vector2(170, 40);
+            narrator.GetComponentInChildren<TextMeshProUGUI>().text = "In the Farm you need to plant seeds or spores to grow them and harvest. Click the Buy button of the ingredient you want to grow";
+            narrator.GetComponentInChildren<TextMeshProUGUI>().fontSize = 13;
+            focusWindow.SetActive(false);
+        }
+        else if (stage == 23)//Farming info
+        {
+            narrator.transform.localPosition = new Vector2(-280, -125);
+            narrator.GetComponentInChildren<TextMeshProUGUI>().text = "If you change your mind you can click Cancel. Now Click on one of the dirt mounds on the ground to plant. This costs money.";
+            narrator.GetComponentInChildren<TextMeshProUGUI>().fontSize = 13;
+        }
+        else if (stage == 25)//Farming info
+        {
+            narrator.transform.localPosition = new Vector2(-280, -125);
+            narrator.GetComponentInChildren<TextMeshProUGUI>().text = "When you click on the dirt mound the ingredient starts growing, click it once it's fully grown to harvest it. When you're done click <color=#00ffffff><b>back";
+            narrator.GetComponentInChildren<TextMeshProUGUI>().fontSize = 13;
+            focusWindow.SetActive(false);
+            okay.SetActive(true);
+        }
+        else if (stage == 26)//Farming info
+        {
+            narrator.transform.localPosition = new Vector2(-280, -125);
+            narrator.GetComponentInChildren<TextMeshProUGUI>().text = "Now lets talk about the shop";
+            narrator.GetComponentInChildren<TextMeshProUGUI>().fontSize = 13;
+            focusWindow.SetActive(false);
+            okay.SetActive(true);
+        }
 
         else if (stage == 50)//skip tutorial
         {

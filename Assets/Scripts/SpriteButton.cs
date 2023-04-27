@@ -13,8 +13,15 @@ public class SpriteButton : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, 100);
             if (hit && hit.transform.name.Contains(gameObject.name))
             {
-                panel.SetActive(true);
-                generalManager.GetComponent<Tutorial>().NextStage();
+                if (gameObject.name.Contains("Door"))
+                {
+                    panel.SetActive(true);
+                    generalManager.GetComponent<Tutorial>().NextStage();
+                }
+                else
+                {
+                    generalManager.GetComponent<Tutorial>().NextStage();
+                }
             }
         }
     }
