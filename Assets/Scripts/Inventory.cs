@@ -132,15 +132,15 @@ public class Inventory : MonoBehaviour
             }
             if (selectedIngredient.name == "Blueberry" || selectedIngredient.name == "Rose Quartz" || selectedIngredient.name == "Toad")//temp solution to calculate cost because im too tired to do this more efficiently
             {
-                cost = 100;
+                cost = 150;
             }
             else if (selectedIngredient.name == "Beetle" || selectedIngredient.name == "Mushy" || selectedIngredient.name == "Mandrake")
             {
-                cost = 80;
+                cost = 120;
             }
             else if (selectedIngredient.name == "Skull" || selectedIngredient.name == "Toxic Butterfly" || selectedIngredient.name == "Carnelian")
             {
-                cost = 50;
+                cost = 100;
             }
         }
 
@@ -156,6 +156,54 @@ public class Inventory : MonoBehaviour
             envelopeButton.GetComponent<LetterOrders>().money -= cost;
             amount.GetComponent<TextMeshProUGUI>().text = number.ToString();
             moneyCounter.GetComponent<TextMeshProUGUI>().text = "$" + envelopeButton.GetComponent<LetterOrders>().money;
+        }
+    }
+
+    public void Sell(string ingredienName)
+    {
+        foreach (GameObject ingredient in ingredients)//grabbing the gameobject based off its name so I dont have to attach a script to each ingredient
+        {
+            //print(ingredientName + ingredient.name);
+            if (ingredienName == ingredient.name)
+            {
+                selectedIngredient = ingredient;
+            }
+            if (selectedIngredient.name == "Blueberry" || selectedIngredient.name == "Rose Quartz" || selectedIngredient.name == "Toad")//temp solution to calculate cost because im too tired to do this more efficiently
+            {
+                cost = 80;
+            }
+            else if (selectedIngredient.name == "Beetle" || selectedIngredient.name == "Mushy" || selectedIngredient.name == "Mandrake")
+            {
+                cost = 60;
+            }
+            else if (selectedIngredient.name == "Skull" || selectedIngredient.name == "Toxic Butterfly" || selectedIngredient.name == "Carnelian")
+            {
+                cost = 30;
+            }
+        }
+
+        GameObject label = selectedIngredient.transform.GetChild(0).gameObject;
+        GameObject amount = label.transform.GetChild(0).gameObject;
+        int.TryParse(amount.GetComponent<TextMeshProUGUI>().text, out int number);
+        print(envelopeButton.GetComponent<LetterOrders>().money + " > " + cost);
+
+        if (number >= 1)//if the ingredient is available to sell
+        {
+            print("buying 1 " + ingredientName);
+            number -= 1;
+            envelopeButton.GetComponent<LetterOrders>().money += cost;
+            amount.GetComponent<TextMeshProUGUI>().text = number.ToString();
+            moneyCounter.GetComponent<TextMeshProUGUI>().text = "$" + envelopeButton.GetComponent<LetterOrders>().money;
+        }
+        if (number <= 0)
+        {
+            foreach (Sprite missingIgredient in missingIngredients)
+            {
+                if (missingIgredient.name.Contains(selectedIngredient.name))
+                {
+                    selectedIngredient.GetComponent<Image>().sprite = missingIgredient;
+                }
+            }
         }
     }
 

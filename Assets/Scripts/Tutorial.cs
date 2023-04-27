@@ -163,6 +163,7 @@ public class Tutorial : MonoBehaviour
         {
             focusWindow.SetActive(false);
             narrator.SetActive(false);
+            orderCompleteButton.SetActive(true);
         }
 
     }
