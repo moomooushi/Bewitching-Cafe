@@ -101,6 +101,7 @@ public class Tutorial : MonoBehaviour
         }
         else if (stage == 10)//accept new order
         {
+            orderCompleteButton.SetActive(false);
             narrator.GetComponentInChildren<TextMeshProUGUI>().text = "Let's see what the new order is, click the <color=#00ffffff>New Order";
         }
         else if (stage == 11)//exit
@@ -113,6 +114,7 @@ public class Tutorial : MonoBehaviour
             narrator.transform.localPosition = new Vector2(-114, 46);
             focusWindow.transform.localPosition = new Vector2(229, -105);
             focusWindow.transform.localScale = new Vector2(1.7f, 1.7f);
+            orderCompleteButton.SetActive(true);
             focusWindow.SetActive(true);
         }
         else if (stage == 13)
@@ -131,7 +133,7 @@ public class Tutorial : MonoBehaviour
         else if (stage == 15)//mining info
         {
             narrator.transform.localPosition = new Vector2(-280, -125);
-            narrator.GetComponentInChildren<TextMeshProUGUI>().text = "In the mines all you have to do it click rocks to mine them and uncover ingredients and click them. When you're done click <color=#00ffffff><b>back";
+            narrator.GetComponentInChildren<TextMeshProUGUI>().text = "In the mines all you have to do is click rocks to mine them and uncover ingredients and click them. When you're done click <color=#00ffffff><b>back";
             narrator.GetComponentInChildren<TextMeshProUGUI>().fontSize = 13;
             focusWindow.SetActive(false);
             okay.SetActive(true);
@@ -219,7 +221,14 @@ public class Tutorial : MonoBehaviour
             okay.SetActive(true);
             focusWindow.SetActive(false);
         }
-
+        else if (shopStage == 3)
+        {
+            narrator.GetComponentInChildren<TextMeshProUGUI>().text = "That's everything. Time to get to work!";
+            narrator.GetComponentInChildren<TextMeshProUGUI>().fontSize = 20;
+            narrator.transform.localPosition = new Vector2(90, -30f);
+            okay.SetActive(true);
+            focusWindow.SetActive(false);
+        }
         else if (stage == 100)//skip tutorial
         {
             focusWindow.SetActive(false);
